@@ -1,0 +1,104 @@
+@mixin bp($breakpoint) {
+	@if ($breakpoint == sm) {
+		@media all and (min-width: 360px) {
+			@content;
+		}
+	}
+	@if ($breakpoint == md) {
+		@media all and (min-width: 768px) {
+			@content;
+		}
+	}
+	@if ($breakpoint == lg) {
+		@media all and (min-width: 992px) {
+			@content;
+		}
+	}
+	@if ($breakpoint == xl) {
+		@media all and (min-width: 1200px) {
+			@content;
+		}
+	}
+	@if ($breakpoint == xxl) {
+		@media all and (min-width: 1340px) {
+			@content;
+		}
+	}
+}
+
+@mixin font($fname, $fstyle, $fweight, $furl) {
+	@font-face {
+		font-family: $fname;
+		font-style: $fstyle;
+		font-weight: $fweight;
+		src: url($furl) format('ttf');
+	}
+}
+
+@include font('futura-pt', normal, 400, '../fonts/futura-pt-book.ttf');
+@include font('futura-pt', normal, 450, '../fonts/futura-pt-light.ttf');
+@include font('futura-pt', normal, 600, '../fonts/futura-pt-medium.ttf');
+@include font('futura-pt', normal, bold, '../fonts/futura-pt-bold.ttf');
+
+$accent: orange; // Accent Color
+$fontsize: 16px; // Body Font Size
+$textcolor: #333; // Text Color
+$lineheight: 1.65; // Document Line Height
+$userfont: futura-pt, sans-serif; // User Font Family
+
+input, textarea {
+	outline: none;
+}
+
+body {
+	font-family: $userfont;
+	font-size: $fontsize;
+	line-height: $lineheight;
+	color: $textcolor;
+	min-width: 320px;
+	position: relative;
+	overflow-x: hidden;
+	margin: 0;
+}
+
+img {
+	max-width: 100%;
+}
+
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+
+.spectre-btn {
+	background: #e6ff31;
+	color: #000;
+	text-align: center;
+	font-size: 16px;
+	line-height: 1;
+	padding: 12px 15px;
+	border-radius: 7px;
+	text-decoration: none;
+	cursor: pointer;
+	transition: 0.2s;
+	font-weight: 600;
+
+	&:hover {
+		background: #ff3838;
+		color: #fff;
+	}
+
+	&--secondary {
+		background: #ff3838;
+		color: #fff;
+
+		&:hover {
+			background: #e6ff31;
+			color: #000;
+		}
+	}
+
+	&--big {
+		padding-top: 17px;
+		padding-bottom: 17px;
+	}
+}
