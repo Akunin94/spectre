@@ -47,12 +47,9 @@
     &__popup {
         position: fixed;
         left: 0;
-        right: 0;
         top: 0;
-        bottom: 0;
-        overflow: auto;
-        padding: 70px 20px 0;
-        display: flex;
+		width: 100%;
+		height: 100%;
         background: linear-gradient(#D26058, #DD3B39);
         opacity: 0;
         visibility: hidden;
@@ -64,6 +61,13 @@
             visibility: visible;
             transform: translateY(0);
         }
+
+		&-scroller {
+			padding: 70px 20px 30px;
+			max-height: 100%;
+			overflow: auto;
+			position: relative;
+		}
 
         &-close {
             position: absolute;
@@ -81,7 +85,7 @@
 
             ul {
                 margin: auto 0;
-                padding: 0 0 60px;
+                padding: 0;
                 list-style: none;
                 width: 100%;
 

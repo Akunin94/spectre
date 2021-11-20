@@ -53,7 +53,12 @@ input, textarea {
 	outline: none;
 }
 
+html {
+	height: 100%;
+}
+
 body {
+	height: 100%;
 	font-family: $userfont;
 	font-size: $fontsize;
 	line-height: $lineheight;
@@ -63,8 +68,10 @@ body {
 	position: relative;
 	overflow-x: hidden;
 	margin: 0;
-	content-visibility: auto;
-  	contain-intrinsic-size: 101vh;
+}
+
+.spectre-overflowhidden {
+	overflow: hidden !important;
 }
 
 img {

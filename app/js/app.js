@@ -60,4 +60,34 @@ $(function(){
 		}
 	});
 	// SLIDERS END
+
+
+	// SKIP TO MAIN BUTTON START
+	$(document).on('click', '.spectre-main-block__downbutton', function(){
+		let position = $('#main').offset().top;
+
+		if ($("body").width() < 1200) {
+			position = position - 60;
+		}
+
+		$("html, body").animate({ scrollTop: position }, 800);
+
+		return false;
+	});
+	// SKIP TO MAIN BUTTON END
+
+
+	// SKIP TO NEXT BLOCK START
+	$(document).on('click', '.spectre-info__buttonwrap-button', function(){
+		let position = $(this).closest('.spectre-info').offset().top;
+
+		if ($("body").width() < 1200) {
+			position = position - 60;
+		}
+
+		$("html, body").animate({ scrollTop: position }, 800);
+
+		return false;
+	});
+	// SKIP TO NEXT BLOCK END
 });
