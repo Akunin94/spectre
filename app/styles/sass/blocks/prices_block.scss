@@ -1,0 +1,90 @@
+.spectre-prices {
+    padding: 30px 30px 1px;
+    background: #fff;
+    margin-bottom: 30px;
+
+    &__title {
+        font-size: 26px;
+        line-height: 1;
+        color: #333;
+        margin-bottom: 34px;
+        font-weight: bold;
+        width: 100%;
+    }
+
+    &__items {
+        padding-bottom: 30px;
+
+        &-title {
+            font-size: 20px;
+            line-height: 1;
+            font-weight: 600;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+
+            &:before {
+                position: absolute;
+                left: 0;
+                top: -8px;
+                width: 150px;
+                content: '';
+                border-top: 20px solid #D5EACC;
+                z-index: -1;
+
+                .spectre-prices__items--red & {
+                    border-top-color: #FFD3D3;
+                }
+            }
+        }
+
+        &-item {
+            padding: 0 0 0 65px;
+            position: relative;
+            margin-bottom: 20px;
+
+            &:before {
+                position: absolute;
+                left: 0;
+                top: calc(50% - 25px);
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                content: '';
+                background: #f5f5f5 url("data:image/svg+xml,%3Csvg width='33' height='23' viewBox='0 0 33 23' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M31 2L11.6667 21L2 11.5004' stroke='%2380BF63' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M31 2L11.6667 21L2 11.5004' stroke='%2380BF63' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A") center / 20px no-repeat;
+
+                .spectre-prices__items--red & {
+                    background-image: url("data:image/svg+xml,%3Csvg width='25' height='25' viewBox='0 0 25 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 2L23 23' stroke='%23FF6E6E' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M23 2L2 23' stroke='%23FF6E6E' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+                    background-size: 17px;
+                }
+            }
+
+            &-header {
+                color: #6ca625;
+                font-size: 16px;
+                line-height: 1;
+                margin-bottom: 4px;
+
+                .spectre-prices__items--red & {
+                    color: #ff6f6f;
+                }
+            }
+
+            &-price {
+                font-weight: 600;
+                color: #333;
+                font-size: 30px;
+                line-height: 1;
+
+                span {
+                    color: #6ca625;
+                    margin: 0 10px;
+
+                    .spectre-prices__items--red & {
+                        color: #ff6f6f;
+                    }
+                }
+            }
+        }
+    }
+}

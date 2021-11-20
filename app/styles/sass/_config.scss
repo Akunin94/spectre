@@ -36,6 +36,8 @@
 	}
 }
 
+@include font('futura-pt', normal, 300, '../fonts/FuturaPT-Light.woff2');
+@include font('futura-pt', italic, 300, '../fonts/FuturaPT-LightObl.woff2');
 @include font('futura-pt', normal, 400, '../fonts/FuturaPT-Book.woff2');
 @include font('futura-pt', italic, 400, '../fonts/FuturaPT-BookObl.woff2');
 @include font('futura-pt', normal, 600, '../fonts/FuturaPT-Medium.woff2');
@@ -119,6 +121,16 @@ img {
 		&:hover {
 			background: #e6ff31;
 			color: #000;
+		}
+	}
+
+	&--white {
+		background: #fff;
+		color: #000;
+
+		&:hover {
+			background: #ff3838;
+			color: #fff;
 		}
 	}
 
