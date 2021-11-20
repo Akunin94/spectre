@@ -1,4 +1,28 @@
 import $ from 'jquery';
+import "slick-carousel";
+
+// JQUERY FIX +++++
+jQuery.event.special.touchstart = {
+	setup: function (_, ns, handle) {
+		this.addEventListener("touchstart", handle, { passive: !ns.includes("noPreventDefault") });
+	},
+};
+jQuery.event.special.touchmove = {
+	setup: function (_, ns, handle) {
+		this.addEventListener("touchmove", handle, { passive: !ns.includes("noPreventDefault") });
+	},
+};
+jQuery.event.special.wheel = {
+	setup: function (_, ns, handle) {
+		this.addEventListener("wheel", handle, { passive: true });
+	},
+};
+jQuery.event.special.mousewheel = {
+	setup: function (_, ns, handle) {
+		this.addEventListener("mousewheel", handle, { passive: true });
+	},
+};
+// JQUERY FIX -----
 
 $(function(){
 	// BURGER START
@@ -9,4 +33,31 @@ $(function(){
 		$('.spectre-header__popup').removeClass('active');
 	});
 	// BURGER END
+
+
+	// SLIDERS START
+	$('.spectre-slider__slider').each(function(){
+		let $slider = $(this),
+			$items = $slider.find('.spectre-slider__item'),
+			itemsLength = $items.length;
+
+		if ( itemsLength > 1 ) {
+			$slider.on('init', function(slick){
+				$slider.append(`<div class="spectre-slider__pager"><span class="spectre-slider__current">1</span> / <span class="spectre-slider__total">${itemsLength}</span></div>`);
+			});
+			$slider.slick({
+				dots: false,
+				autoplay: true,
+				autoplaySpeed: 15000,
+				arrows: true,
+				infinite: true,
+				pauseOnHover: false,
+				rows: 0,
+			});
+			$slider.on('afterChange', function(event, slick, currentSlide, nextSlide){
+				$slider.find('.spectre-slider__current').text(currentSlide+1);
+			});
+		}
+	});
+	// SLIDERS END
 });

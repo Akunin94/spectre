@@ -18,6 +18,11 @@
         @include bp(sm) {
             max-width: none;
         }
+
+        img {
+            width: auto;
+            height: auto;
+        }
     }
 
     &__phone {
@@ -32,6 +37,7 @@
     }
 
     &__burger {
+        cursor: pointer;
         margin: -5px;
         min-width: 34px;
         min-height: 25px;
@@ -66,15 +72,18 @@
             height: 32px;
             right: 8px;
             top: 14px;
+            cursor: pointer;
         }
 
         &-menu {
             width: 100%;
+            display: flex;
 
             ul {
-                margin: 0;
-                padding: 0 0 30px;
+                margin: auto 0;
+                padding: 0 0 60px;
                 list-style: none;
+                width: 100%;
 
                 li {
                     display: block;
@@ -95,6 +104,7 @@
                         text-align: center;
                         justify-content: center;
                         align-items: center;
+                        transition: 0.2s;
 
                         img {
                             margin-left: 5px;
@@ -103,6 +113,11 @@
                         &:hover {
                             background: #e6ff31;
                             color: #000;
+                            transition: 0.2s;
+
+                            img {
+                                filter: brightness(0);
+                            }
                         }
 
                         &.spectre-special {

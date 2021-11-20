@@ -31,14 +31,17 @@
 		font-family: $fname;
 		font-style: $fstyle;
 		font-weight: $fweight;
-		src: url($furl) format('ttf');
+		src: url($furl) format('woff2');
+		font-display: swap;
 	}
 }
 
-@include font('futura-pt', normal, 400, '../fonts/futura-pt-book.ttf');
-@include font('futura-pt', normal, 450, '../fonts/futura-pt-light.ttf');
-@include font('futura-pt', normal, 600, '../fonts/futura-pt-medium.ttf');
-@include font('futura-pt', normal, bold, '../fonts/futura-pt-bold.ttf');
+@include font('futura-pt', normal, 400, '../fonts/FuturaPT-Book.woff2');
+@include font('futura-pt', italic, 400, '../fonts/FuturaPT-BookObl.woff2');
+@include font('futura-pt', normal, 600, '../fonts/FuturaPT-Medium.woff2');
+@include font('futura-pt', italic, 600, '../fonts/FuturaPT-MediumObl.woff2');
+@include font('futura-pt', normal, bold, '../fonts/FuturaPT-Bold.woff2');
+@include font('futura-pt', italic, bold, '../fonts/FuturaPT-BoldObl.woff2');
 
 $accent: orange; // Accent Color
 $fontsize: 16px; // Body Font Size
@@ -54,11 +57,14 @@ body {
 	font-family: $userfont;
 	font-size: $fontsize;
 	line-height: $lineheight;
+	background: #F8F8F8;
 	color: $textcolor;
 	min-width: 320px;
 	position: relative;
 	overflow-x: hidden;
 	margin: 0;
+	content-visibility: auto;
+  	contain-intrinsic-size: 101vh;
 }
 
 img {
@@ -67,6 +73,18 @@ img {
 
 *, *:before, *:after {
 	box-sizing: border-box;
+}
+
+.spectre-main {
+	padding: 35px 10px 0;
+}
+
+.spectre-title {
+	color: #333;
+	font-size: 26px;
+	line-height: 1;
+	font-weight: 700;
+	margin-bottom: 26px;
 }
 
 .spectre-btn {
@@ -101,4 +119,105 @@ img {
 		padding-top: 17px;
 		padding-bottom: 17px;
 	}
+}
+
+/* Slider */
+
+.slick-slider {
+	position: relative;
+	display: block;
+	box-sizing: border-box;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-ms-touch-action: pan-y;
+	touch-action: pan-y;
+	-webkit-tap-highlight-color: transparent;
+}
+.slick-list {
+	position: relative;
+	overflow: hidden;
+	display: block;
+	margin: 0;
+	padding: 0;
+
+	&:focus {
+		outline: none;
+	}
+
+	&.dragging {
+		cursor: pointer;
+		cursor: hand;
+	}
+}
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+	-webkit-transform: translate3d(0, 0, 0);
+	-moz-transform: translate3d(0, 0, 0);
+	-ms-transform: translate3d(0, 0, 0);
+	-o-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+	position: relative;
+	left: 0;
+	top: 0;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+
+	&:before,
+	&:after {
+		content: "";
+		display: table;
+	}
+
+	&:after {
+		clear: both;
+	}
+
+	.slick-loading & {
+		visibility: hidden;
+	}
+}
+.slick-slide {
+	float: left;
+	height: 100%;
+	min-height: 1px;
+	[dir="rtl"] & {
+		float: right;
+	}
+	img {
+		display: block;
+	}
+	&.slick-loading img {
+		display: none;
+	}
+
+	display: none;
+
+	&.dragging img {
+		pointer-events: none;
+	}
+
+	.slick-initialized & {
+		display: block;
+	}
+
+	.slick-loading & {
+		visibility: hidden;
+	}
+
+	.slick-vertical & {
+		display: block;
+		height: auto;
+		border: 1px solid transparent;
+	}
+}
+.slick-arrow.slick-hidden {
+	display: none;
 }

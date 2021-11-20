@@ -1,0 +1,143 @@
+.spectre-slider {
+    margin-bottom: 20px;
+    position: relative;
+
+    .slick-arrow {
+        position: absolute;
+        left: 20px;
+        bottom: 36px;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        cursor: pointer;
+        font-size: 0;
+        outline: none;
+        border: none;
+        padding: 0;
+        z-index: 1;
+        background: #80bf63;
+        transform: rotate(180deg);
+
+        &:before {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            content: '';
+            background: url("data:image/svg+xml,%3Csvg width='12' height='23' viewBox='0 0 12 23' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='14.8548' height='1.98631' rx='0.993153' transform='matrix(0.653676 0.756774 -0.767998 0.640453 1.66064 0.270264)' fill='white'/%3E%3Crect width='14.8548' height='1.98631' rx='0.993154' transform='matrix(0.653676 -0.756774 -0.767998 -0.640453 1.77637 22.973)' fill='white'/%3E%3C/svg%3E%0A") 55% 50% no-repeat;
+        }
+
+        &.slick-next {
+            transform: rotate(0);
+            margin-left: 79px;
+        }
+
+        &:hover {
+            opacity: 0.5;
+        }
+    }
+
+    & ~ & .slick-arrow {
+        background: #E6FF31;
+
+        &:before {
+            filter: brightness(0);
+        }
+    }
+
+    & ~ & ~ & .slick-arrow {
+        background: #FF3838;
+
+        &:before {
+            filter: none;
+        }
+    }
+
+    &__pager {
+        position: absolute;
+        border-radius: 7px 0 7px 0;
+        background: #80bf63;
+        color: #fff;
+        text-align: center;
+        font-size: 45px;
+        line-height: 1;
+        height: 108px;
+        width: 108px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 222px;
+        right: 0;
+        z-index: 1;
+
+        .spectre-slider ~ .spectre-slider & {
+            background: #E6FF31;
+            right: auto;
+            left: 0;
+            color: #333;
+        }
+
+        .spectre-slider ~ .spectre-slider ~ .spectre-slider & {
+            background: #FF3838;
+            left: auto;
+            right: 0;
+            color: #fff;
+        }
+    }
+
+    &__item {
+
+    }
+
+    &__image {
+        border-radius: 7px;
+        overflow: hidden;
+        font-size: 0;
+        margin-bottom: -7px;
+        background-position: 50% 50%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 330px;
+        position: relative;
+    }
+
+    &__text {
+        padding: 20px;
+        background: #fff;
+        border-radius: 7px;
+
+        .slick-slider & {
+            padding-bottom: 115px;
+        }
+    }
+
+    &__title {
+        font-size: 20px;
+        line-height: 1;
+        margin-bottom: 9px;
+        font-weight: bold;
+    }
+
+    &__subtitle {
+        font-size: 14px;
+        line-height: 1;
+        color: #6ca625;
+        font-weight: 600;
+        margin-bottom: 14px;
+
+        .spectre-slider ~ .spectre-slider & {
+            color: #ffbc05;
+        }
+
+        .spectre-slider ~ .spectre-slider ~ .spectre-slider & {
+            color: #FF3838;
+        }
+    }
+
+    &__description {
+        font-size: 14px;
+        line-height: 1;
+        color: #777;
+    }
+}
