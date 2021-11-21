@@ -1,0 +1,50 @@
+.spectre-calc {
+    margin-bottom: 40px;
+
+    &__title {
+        font-size: 26px;
+        line-height: 1;
+        font-weight: 700;
+        margin-bottom: 26px;
+    }
+
+    &__block {
+        background: #6bac5b url(../images/dist/calc_bg.png) center / cover no-repeat;
+        border-radius: 7px;
+        padding: 45px 20px 40px;
+        color: #fff;
+
+        &-title {
+            font-size: 20px;
+            line-height: 1;
+            font-weight: 700;
+            margin-bottom: 26px;
+        }
+
+        &-left {
+            
+            &-item {
+            }
+
+            &-item + &-item {
+                margin-top: 39px;
+            }
+
+            &-title {
+                font-size: 15px;
+                line-height: 1;
+                margin-bottom: 32px;
+            }
+
+            .noUi-target {
+                height: 4px;
+                background: #fff;
+                border-radius: 0;
+            }
+
+            .noUi-connects {
+                background: #e6ff31;
+            }
+        }
+    }
+}

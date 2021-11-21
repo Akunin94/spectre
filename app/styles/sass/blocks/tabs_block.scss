@@ -1,0 +1,91 @@
+.spectre-tabs {
+    padding-bottom: 14px;
+
+    &__title {
+        font-size: 26px;
+        line-height: 1;
+        margin-bottom: 12px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    &__description {
+        font-size: 15px;
+        line-height: 1;
+        margin-bottom: 28px;
+        color: #777;
+    }
+
+    &__blocks {
+
+        &-block {
+
+            &--all {
+                display: none;
+            }
+        }
+
+        &-title {
+            font-size: 18px;
+            line-height: 1;
+            margin-bottom: 19px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        &-list {
+            display: flex;
+            margin-left: -20px;
+            overflow-x: auto;
+            padding: 10px 0 26px;
+        }
+
+        &-item {
+            flex: 0 0 248px;
+            max-width: 248px;
+            margin: 0 0 0 20px;
+            background: #fff;
+            border-radius: 7px;
+            padding: 61px 20px 31px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0px 4px 43px rgba(0, 0, 0, 0.08);
+        }
+
+        &-label {
+            position: absolute;
+            left: -10px;
+            top: -10px;
+            background: #FFE663;
+            border-radius: 7px 0px 20px;
+            font-size: 18px;
+            line-height: 1;
+            padding: 13px 20px 14px;
+            font-weight: bold;
+            color: #ff3838;
+        }
+
+        &-label + &-img {
+            margin-top: 0;
+        }
+
+        &-img {
+            margin: -30px 0 18px;
+            width: auto;
+            height: auto;
+        }
+
+        &-square {
+            font-size: 40px;
+            line-height: 1;
+            margin-bottom: 18px;
+        }
+
+        &-btn {
+            margin-top: auto;
+            width: 100%;
+        }
+    }
+}

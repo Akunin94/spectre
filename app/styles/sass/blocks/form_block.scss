@@ -1,0 +1,53 @@
+.spectre-form-block {
+    margin: 0 -10px 41px;
+    background: #4E9241 url(../images/dist/form_bg.png) 50% 50% / cover no-repeat;
+    padding: 30px;
+    color: #fff;
+    text-align: center;
+
+    @include bp(sm) {
+        padding: 40px 40px 31px;
+    }
+
+    &__left {
+        margin-bottom: 13px;
+
+        &-title {
+            font-size: 26px;
+            line-height: 1;
+            font-weight: bold;
+            margin-bottom: 17px;
+        }
+
+        &-description {
+            font-size: 15px;
+            line-height: 1;
+        }
+    }
+
+    &__right {
+
+        &-title {
+            font-size: 20px;
+            line-height: 1;
+            font-weight: bold;
+            margin-bottom: 28px;
+        }
+
+        &-form {
+
+            &-field {
+                margin-bottom: 20px;
+            }
+
+            &-button {
+                width: 100%;
+            }
+
+            &-note {
+                font-size: 12px;
+                line-height: 1;
+            }
+        }
+    }
+}

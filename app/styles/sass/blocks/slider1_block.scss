@@ -1,0 +1,102 @@
+.spectre-slider1 {
+    margin-bottom: 40px;
+    position: relative;
+
+    .slick-arrow {
+        position: absolute;
+        left: 20px;
+        top: 242px;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        cursor: pointer;
+        font-size: 0;
+        outline: none;
+        border: none;
+        padding: 0;
+        z-index: 1;
+        background: #fff;
+        transform: rotate(180deg);
+
+        &:before {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            content: '';
+            background: url("data:image/svg+xml,%3Csvg width='12' height='23' viewBox='0 0 12 23' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='14.8548' height='1.98631' rx='0.993153' transform='matrix(0.653676 0.756774 -0.767998 0.640453 1.66064 0.270264)' fill='black'/%3E%3Crect width='14.8548' height='1.98631' rx='0.993154' transform='matrix(0.653676 -0.756774 -0.767998 -0.640453 1.77637 22.973)' fill='black'/%3E%3C/svg%3E%0A") 55% 50% no-repeat;
+        }
+
+        &.slick-next {
+            transform: rotate(0);
+            margin-left: 79px;
+        }
+
+        &:hover {
+            opacity: 0.5;
+        }
+    }
+
+    &__pager {
+        position: absolute;
+        border-radius: 7px 0 7px 0;
+        background: #F3F3F3;
+        color: #333;
+        text-align: center;
+        font-size: 45px;
+        line-height: 1;
+        height: 108px;
+        width: 108px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 222px;
+        right: 0;
+        z-index: 1;
+    }
+
+    &__item {
+        border-radius: 7px 0px 0px 7px;
+    }
+
+    &__image {
+        border-radius: 7px;
+        overflow: hidden;
+        font-size: 0;
+        margin-bottom: -10px;
+        background-position: 50% 50%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 330px;
+        position: relative;
+    }
+
+    &__text {
+        background: radial-gradient(88.19% 175.2% at 52.04% 17.58%, rgba(79, 104, 147, 0.56) 0%, rgba(255, 255, 255, 0.196) 100%), #546581;
+        padding: 30px 20px 25px;
+        border-radius: 7px;
+    }
+
+    &__title {
+        font-size: 20px;
+        line-height: 1;
+        margin-bottom: 9px;
+        font-weight: bold;
+        color: #fff;
+    }
+
+    &__subtitle {
+        font-size: 14px;
+        line-height: 1;
+        color: #fff;
+        font-weight: 600;
+        margin-bottom: 14px;
+    }
+
+    &__description {
+        font-size: 14px;
+        line-height: 1;
+        color: #fff;
+    }
+}
