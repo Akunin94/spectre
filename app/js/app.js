@@ -169,4 +169,10 @@ $(function(){
 		$('.spectre-video__popup').html('').removeClass('active');
 	}
 	// VIDEO POPUP END
+
+
+
+	// MASK START
+	$('input[name=phone]').mask("8(999) 999-9999");
+	// MASK END
 });

@@ -1,0 +1,48 @@
+.spectre-footer {
+    background: #F8F8F8;
+    text-align: center;
+    padding: 40px 30px 30px;
+    color: #777;
+
+    a {
+        color: #777;
+        text-decoration: none;
+        transition: 0.2s;
+
+        &:hover {
+            text-decoration: underline;
+            color: #000;
+        }
+    }
+
+    &__left {
+        margin-bottom: 23px;
+    }
+
+    &__logo {
+        display: inline-block;
+        font-size: 0;
+        margin-bottom: 20px;
+
+        img {
+            width: auto;
+            height: auto;
+        }
+    }
+
+    &__description {
+        font-size: 12px;
+        line-height: 15px;
+    }
+
+    &__note {
+        font-size: 10px;
+        line-height: 1.2;
+        margin-bottom: 20px;
+    }
+
+    &__policy {
+        font-size: 14px;
+        line-height: 1;
+    }
+}
