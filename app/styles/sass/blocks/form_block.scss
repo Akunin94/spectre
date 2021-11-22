@@ -8,6 +8,10 @@
     @include bp(sm) {
         padding: 40px 40px 31px;
     }
+    @include bp(md) {
+        margin-left: -20px;
+        margin-right: -20px;
+    }
 
     &__left {
         margin-bottom: 13px;
@@ -17,6 +21,16 @@
             line-height: 1;
             font-weight: bold;
             margin-bottom: 17px;
+
+            &--success {
+                margin-bottom: 0;
+                display: none;
+
+                .spectre-form-block__right-form-note {
+                    margin-top: 24px;
+                    font-weight: normal;
+                }
+            }
         }
 
         &-description {
@@ -38,6 +52,16 @@
 
             &-field {
                 margin-bottom: 20px;
+            }
+
+            .spectre-input {
+                border-color: #fff;
+                background: rgba(255, 255, 255, .2);
+                color: #fff;
+
+                &::-webkit-input-placeholder, &:-ms-input-placeholder, &::placeholder, &::-moz-placeholder {
+                    color: #fff;
+                }
             }
 
             &-button {

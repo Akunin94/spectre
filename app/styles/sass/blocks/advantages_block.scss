@@ -5,6 +5,12 @@
     color: #fff;
     position: relative;
 
+    @include bp(md) {
+        margin-left: -20px;
+        margin-right: -20px;
+        padding: 40px 20px 130px;
+    }
+
     &__left {
         margin-bottom: 29px;
 

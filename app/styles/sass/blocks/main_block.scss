@@ -8,9 +8,27 @@
     min-height: 523px;
     padding: 20px 40px;
     margin-top: 60px;
+    position: relative;
+
+    @media all and (min-width: 960px) {
+        background-image: url(../images/dist/header_bg1.png);
+        min-height: 700px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 100px 100px 40px 55px;
+    }
+
+    @include bp(xl) {
+        min-height: 800px;
+        padding: 195px 100px 40px 55px;
+    }
 
     &__wrap {
         margin-bottom: 32px;
+
+        @media all and (min-width: 960px) {
+            margin-bottom: 41px;
+        }
     }
 
     &__title {
@@ -20,8 +38,20 @@
         line-height: 1;
         font-weight: 700;
 
+        @media all and (min-width: 960px) {
+            width: 489px;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(4px);
+            text-align: left;
+            margin: 0;
+            font-size: 60px;
+            padding: 34px 25px 39px;
+        }
+
         span {
-            color: #fff !important;
+            @media all and (max-width: 959px) {
+                color: #fff !important;
+            }
         }
     }
 
@@ -29,17 +59,46 @@
         font-size: 14px;
         line-height: 1;
         color: #fff;
+
+        @media all and (min-width: 960px) {
+            width: 448px;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(4px);
+            text-align: left;
+            font-size: 20px;
+            line-height: 1.2;
+            color: #333;
+            padding: 0 25px 25px;
+        }
     }
 
     &__btn {
         margin-bottom: 65px;
+
+        @media all and (min-width: 960px) {
+            margin: 0 0 65px 25px;
+            min-width: 253px;
+        }
+
+        @include bp(xl) {
+            margin-bottom: 81px;
+        }
     }
 
     &__downbutton {
         width: 50px;
         height: 50px;
         border-radius: 50%;
-        background: #fff url("data:image/svg+xml,%3Csvg width='20' height='12' viewBox='0 0 20 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19.375 0.875L10 11.2917L0.625 0.875' stroke='%23333333' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A") center no-repeat;
+        background: #fff url("data:image/svg+xml,%3Csvg width='20' height='12' viewBox='0 0 20 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19.375 0.875L10 11.2917L0.625 0.875' stroke='%23333333' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A") 50% 50% no-repeat;
         cursor: pointer;
+        transition: 0.2s;
+
+        @media all and (min-width: 960px) {
+            margin-left: 25px;
+        }
+
+        &:hover {
+            opacity: 0.8;
+        }
     }
 }

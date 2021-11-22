@@ -7,6 +7,10 @@
         padding-left: 60px;
         padding-right: 60px;
     }
+    @include bp(md) {
+        margin-left: -20px;
+        margin-right: -20px;
+    }
 
     &__form {
         text-align: center;
@@ -17,6 +21,17 @@
             font-weight: bold;
             color: #333;
             margin-bottom: 17px;
+
+            &--success {
+                margin-bottom: 0;
+                display: none;
+                text-align: center;
+
+                .spectre-form1-block__form-note {
+                    margin-top: 24px;
+                    font-weight: normal;
+                }
+            }
         }
 
         &-description {

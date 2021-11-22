@@ -71,6 +71,16 @@
         right: 0;
         z-index: 1;
 
+        @media all and (min-width: 480px) {
+            top: 292px;
+        }
+        @media all and (min-width: 640px) {
+            top: 412px;
+        }
+        @include bp(md) {
+            top: 492px;
+        }
+
         .spectre-slider ~ .spectre-slider & {
             background: #E6FF31;
             right: auto;
@@ -100,6 +110,16 @@
         background-repeat: no-repeat;
         height: 330px;
         position: relative;
+
+        @media all and (min-width: 480px) {
+            height: 400px;
+        }
+        @media all and (min-width: 640px) {
+            height: 520px;
+        }
+        @include bp(md) {
+            height: 600px;
+        }
     }
 
     &__text {

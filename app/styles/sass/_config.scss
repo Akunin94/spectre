@@ -85,6 +85,12 @@ input, textarea {
 	transition: 0.2s;
 	font-weight: 600;
 
+	@media all and (min-width: 960px) {
+		padding-top: 13px;
+		padding-bottom: 14px;
+		font-size: 18px;
+	}
+
 	&:hover {
 		background: #ff3838;
 		color: #fff;
@@ -155,6 +161,14 @@ img {
 
 .spectre-main {
 	padding: 35px 10px 0;
+
+	@include bp(md) {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	@media all and (min-width: 960px) {
+		padding: 35px 35px 0;
+	}
 }
 
 .spectre-title {
