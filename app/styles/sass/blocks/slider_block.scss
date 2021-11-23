@@ -2,6 +2,10 @@
     margin-bottom: 20px;
     position: relative;
 
+    @include bp(md1) {
+        margin-bottom: 50px;
+    }
+
     .slick-arrow {
         position: absolute;
         left: 20px;
@@ -18,6 +22,12 @@
         background: #80bf63;
         transform: rotate(180deg);
 
+        @include bp(md1) {
+            left: auto;
+            right: 630px;
+            bottom: 40px;
+        }
+
         &:before {
             position: absolute;
             left: 0;
@@ -30,7 +40,7 @@
 
         &.slick-next {
             transform: rotate(0);
-            margin-left: 79px;
+            margin-right: -79px;
         }
 
         &:hover {
@@ -41,6 +51,16 @@
     & ~ & .slick-arrow {
         background: #E6FF31;
 
+        @include bp(md1) {
+            right: auto;
+            left: 541px;
+
+            &.slick-next {
+                margin-left: 79px;
+                margin-right: 0;
+            }
+        }
+
         &:before {
             filter: brightness(0);
         }
@@ -48,6 +68,16 @@
 
     & ~ & ~ & .slick-arrow {
         background: #FF3838;
+
+        @include bp(md1) {
+            left: auto;
+            right: 630px;
+
+            &.slick-next {
+                margin-left: 0;
+                margin-right: -79px;
+            }
+        }
 
         &:before {
             filter: none;
@@ -71,14 +101,25 @@
         right: 0;
         z-index: 1;
 
-        @media all and (min-width: 480px) {
+        @include bp(sm1) {
             top: 292px;
         }
-        @media all and (min-width: 640px) {
+        @include bp(sm2) {
             top: 412px;
         }
         @include bp(md) {
             top: 492px;
+        }
+        @include bp(md1) {
+            top: auto;
+            bottom: 0;
+            right: 344px;
+            width: 157px;
+            height: 157px;
+            font-size: 45px;
+            align-items: baseline;
+            padding-top: 40px;
+            border-radius: 7px 7px 0 0;
         }
 
         .spectre-slider ~ .spectre-slider & {
@@ -86,6 +127,11 @@
             right: auto;
             left: 0;
             color: #333;
+
+            @include bp(md1) {
+                right: auto;
+                left: 344px;
+            }
         }
 
         .spectre-slider ~ .spectre-slider ~ .spectre-slider & {
@@ -93,11 +139,35 @@
             left: auto;
             right: 0;
             color: #fff;
+
+            @include bp(md1) {
+                right: 344px;
+                left: auto;
+            }
         }
     }
 
-    &__item {
+    &__current {
+        @include bp(md1) {
+            font-size: 70px;
+            line-height: 1;
+        }
+    }
 
+    &__item.slick-slide {
+        @include bp(md1) {
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: flex-end;
+
+            .spectre-slider ~ .spectre-slider & {
+                flex-direction: row;
+            }
+
+            .spectre-slider ~ .spectre-slider ~ .spectre-slider & {
+                flex-direction: row-reverse;
+            }
+        }
     }
 
     &__image {
@@ -111,14 +181,19 @@
         height: 330px;
         position: relative;
 
-        @media all and (min-width: 480px) {
+        @include bp(sm1) {
             height: 400px;
         }
-        @media all and (min-width: 640px) {
+        @include bp(sm2) {
             height: 520px;
         }
         @include bp(md) {
             height: 600px;
+        }
+        @include bp(md1) {
+            flex-shrink: 0;
+            width: 441px;
+            height: 546px;
         }
     }
 
@@ -127,8 +202,32 @@
         background: #fff;
         border-radius: 7px;
 
+        @include bp(md1) {
+            padding: 40px 60px 40px 80px;
+        }
+
         .slick-slider & {
             padding-bottom: 115px;
+
+            @include bp(md1) {
+                padding-bottom: 130px;
+            }
+        }
+    }
+
+    & ~ & &__text {
+
+        @include bp(md1) {
+            padding-right: 40px;
+            padding-left: 100px;
+        }
+    }
+
+    & ~ & ~ & &__text {
+
+        @include bp(md1) {
+            padding-right: 60px;
+            padding-left: 80px;
         }
     }
 
@@ -137,6 +236,12 @@
         line-height: 1;
         margin-bottom: 9px;
         font-weight: bold;
+        color: #333;
+
+        @include bp(md1) {
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
     }
 
     &__subtitle {
@@ -145,6 +250,11 @@
         color: #6ca625;
         font-weight: 600;
         margin-bottom: 14px;
+
+        @include bp(md1) {
+            font-size: 24px;
+            margin-bottom: 24px;
+        }
 
         .spectre-slider ~ .spectre-slider & {
             color: #ffbc05;
@@ -159,5 +269,10 @@
         font-size: 14px;
         line-height: 1;
         color: #777;
+
+        @include bp(md1) {
+            font-size: 18px;
+            line-height: 1.2;
+        }
     }
 }

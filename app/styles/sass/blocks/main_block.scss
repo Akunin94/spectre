@@ -10,7 +10,7 @@
     margin-top: 60px;
     position: relative;
 
-    @media all and (min-width: 960px) {
+    @include bp(md1) {
         background-image: url(../images/dist/header_bg1.png);
         min-height: 700px;
         align-items: flex-start;
@@ -26,7 +26,7 @@
     &__wrap {
         margin-bottom: 32px;
 
-        @media all and (min-width: 960px) {
+        @include bp(md1) {
             margin-bottom: 41px;
         }
     }
@@ -38,7 +38,7 @@
         line-height: 1;
         font-weight: 700;
 
-        @media all and (min-width: 960px) {
+        @include bp(md1) {
             width: 489px;
             background: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(4px);
@@ -60,7 +60,7 @@
         line-height: 1;
         color: #fff;
 
-        @media all and (min-width: 960px) {
+        @include bp(md1) {
             width: 448px;
             background: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(4px);
@@ -75,7 +75,7 @@
     &__btn {
         margin-bottom: 65px;
 
-        @media all and (min-width: 960px) {
+        @include bp(md1) {
             margin: 0 0 65px 25px;
             min-width: 253px;
         }
@@ -93,7 +93,7 @@
         cursor: pointer;
         transition: 0.2s;
 
-        @media all and (min-width: 960px) {
+        @include bp(md1) {
             margin-left: 25px;
         }
 

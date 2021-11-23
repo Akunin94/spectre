@@ -18,10 +18,10 @@
         background: #fff;
         transform: rotate(180deg);
 
-        @media all and (min-width: 480px) {
+        @include bp(sm1) {
             top: 312px;
         }
-        @media all and (min-width: 640px) {
+        @include bp(sm2) {
             top: 432px;
         }
         @include bp(md) {
@@ -65,10 +65,10 @@
         right: 0;
         z-index: 1;
 
-        @media all and (min-width: 480px) {
+        @include bp(sm1) {
             top: 292px;
         }
-        @media all and (min-width: 640px) {
+        @include bp(sm2) {
             top: 412px;
         }
         @include bp(md) {
@@ -91,10 +91,10 @@
         height: 330px;
         position: relative;
 
-        @media all and (min-width: 480px) {
+        @include bp(sm1) {
             height: 400px;
         }
-        @media all and (min-width: 640px) {
+        @include bp(sm2) {
             height: 520px;
         }
         @include bp(md) {

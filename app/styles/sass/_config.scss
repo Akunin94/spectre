@@ -4,8 +4,23 @@
 			@content;
 		}
 	}
+	@if ($breakpoint == sm1) {
+		@media all and (min-width: 480px) {
+			@content;
+		}
+	}
+	@if ($breakpoint == sm2) {
+		@media all and (min-width: 640px) {
+			@content;
+		}
+	}
 	@if ($breakpoint == md) {
 		@media all and (min-width: 768px) {
+			@content;
+		}
+	}
+	@if ($breakpoint == md1) {
+		@media all and (min-width: 960px) {
 			@content;
 		}
 	}
@@ -85,7 +100,7 @@ input, textarea {
 	transition: 0.2s;
 	font-weight: 600;
 
-	@media all and (min-width: 960px) {
+	@include bp(md1) {
 		padding-top: 13px;
 		padding-bottom: 14px;
 		font-size: 18px;
@@ -161,13 +176,24 @@ img {
 
 .spectre-main {
 	padding: 35px 10px 0;
+	position: relative;
 
 	@include bp(md) {
 		padding-left: 20px;
 		padding-right: 20px;
 	}
-	@media all and (min-width: 960px) {
+	@include bp(md1) {
 		padding: 35px 35px 0;
+
+		&:before {
+			position: absolute;
+			right: 0;
+			top: -57px;
+			width: 213px;
+			height: 248px;
+			content: '';
+			background: url(../images/dist/blur_pic1.png) 0 0 / 100% no-repeat;
+		}
 	}
 }
 
@@ -177,6 +203,12 @@ img {
 	line-height: 1;
 	font-weight: 700;
 	margin-bottom: 26px;
+
+	@include bp(md1) {
+		font-size: 45px;
+		margin-bottom: -40px;
+		max-width: 370px;
+	}
 }
 
 /* Slider */

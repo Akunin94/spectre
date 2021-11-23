@@ -1,11 +1,22 @@
 .spectre-map {
     margin-bottom: 26px;
 
+    @include bp(md1) {
+        margin-bottom: 80px;
+    }
+
     &__title {
         font-size: 26px;
         line-height: 33px;
         font-weight: bold;
         margin-bottom: 22px;
+        color: #333;
+
+        @include bp(md1) {
+            font-size: 45px;
+            line-height: 58px;
+            margin-bottom: 44px;
+        }
     }
 
     &__nav {
@@ -13,6 +24,10 @@
         flex-wrap: wrap;
         align-items: center;
         margin-left: -20px;
+
+        @include bp(md1) {
+            padding-bottom: 12px;
+        }
 
         &-item {
             flex: 0 0 calc(50% - 20px);
@@ -35,6 +50,14 @@
                 flex: 0 0 calc(33.333% - 20px);
                 max-width: calc(33.333% - 20px);
                 font-size: 18px;
+            }
+            @include bp(md1) {
+                flex: 0 0 calc(25% - 20px);
+                max-width: calc(25% - 20px);
+            }
+            @include bp(xl) {
+                flex: 0 0 calc(20% - 20px);
+                max-width: calc(20% - 20px);
             }
 
             img {
@@ -75,5 +98,12 @@
 
     &__map {
         height: 313px;
+
+        @include bp(md1) {
+            height: 390px;
+        }
+        @include bp(xl) {
+            height: 447px;
+        }
     }
 }

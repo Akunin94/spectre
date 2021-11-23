@@ -1,12 +1,21 @@
 .spectre-cards {
     padding: 16px 0 11px;
 
+    @include bp(md1) {
+        padding-bottom: 37px;
+    }
+
     &__title {
         font-size: 26px;
         line-height: 1;
         font-weight: 700;
         margin-bottom: 26px;
         color: #333;
+
+        @include bp(md1) {
+            font-size: 45px;
+            margin-bottom: 53px;
+        }
     }
 
     &__cards {
@@ -15,6 +24,9 @@
             display: flex;
             flex-wrap: wrap;
             margin-left: -20px;
+        }
+        @include bp(md1) {
+            margin-left: -40px;
         }
     }
 
@@ -37,6 +49,14 @@
             max-width: calc(33.333% - 20px);
             margin-left: 20px;
             min-height: 200px;
+        }
+
+        @include bp(md1) {
+            flex: 0 0 calc(33.333% - 40px);
+            max-width: calc(33.333% - 40px);
+            margin-left: 40px;
+            margin-bottom: 40px;
+            min-height: 247px;
         }
     }
 
