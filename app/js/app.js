@@ -281,105 +281,105 @@ $(function(){
 			const gkMarkers = setMarkers(
 				map,
 				[[83.098488, 54.940199]],
-				'../images/dist/logo_m.svg', true
+				'images/dist/logo_m.svg', true
 			)
 
 			// Супермаркеты
 			const type1 = setMarkers(
 				map,
 				[[83.10036,54.936759], [83.101402, 54.93731], [83.102079, 54.937463], [83.102965, 54.936669], [83.103721, 54.937732], [83.10458, 54.937463], [83.10557, 54.938226], [83.106378, 54.937807], [83.106039, 54.938675], [83.105622, 54.939034], [83.106508, 54.939288]],
-				'../images/dist/comp1.svg'
+				'images/dist/comp1.svg'
 			)
 
 			// Бассейн
 			const type2 = setMarkers(
 				map,
 				[[83.100386, 54.936789], [83.10458, 54.937328], [83.105049, 54.938091], [83.107368, 54.939438]],
-				'../images/dist/comp2.svg'
+				'images/dist/comp2.svg'
 			)
 
 			// Банкоматы
 			const type3 = setMarkers(
 				map,
 				[[83.105466, 54.939288], [83.106378, 54.937163], [83.105049, 54.938091], [83.107368, 54.939438]],
-				'../images/dist/comp3.svg'
+				'images/dist/comp3.svg'
 			)
 
 			// Фитнес
 			const type4 = setMarkers(
 				map,
 				[[83.107629, 54.938091]],
-				'../images/dist/comp4.svg'
+				'images/dist/comp4.svg'
 			)
 
 			// Зоотовары
 			const type5 = setMarkers(
 				map,
 				[[83.107629, 54.938091]],
-				'../images/dist/comp5.svg'
+				'images/dist/comp5.svg'
 			)
 
 			// Детские сады
 			const type6 = setMarkers(
 				map,
 				[[83.107629, 54.938091]],
-				'../images/dist/comp6.svg'
+				'images/dist/comp6.svg'
 			)
 
 			// Ледовый дворец
 			const type7 = setMarkers(
 				map,
 				[[83.107629, 54.938091]],
-				'../images/dist/comp7.svg'
+				'images/dist/comp7.svg'
 			)
 
 			// Аптеки
 			const type8 = setMarkers(
 				map,
 				[[83.107629, 54.938091]],
-				'../images/dist/comp8.svg'
+				'images/dist/comp8.svg'
 			)
 
 			// Кафе/рестораны
 			const type9 = setMarkers(
 				map,
 				[[83.107629, 54.938091]],
-				'../images/dist/comp9.svg'
+				'images/dist/comp9.svg'
 			)
 
 			// Транспорт
 			const type10 = setMarkers(
 				map,
 				[[83.107629, 54.938091]],
-				'../images/dist/comp10.svg'
+				'images/dist/comp10.svg'
 			)
 
 			// Школы/лицеи
 			const type11 = setMarkers(
 				map,
 				[[83.107629, 54.938091]],
-				'../images/dist/comp11.svg'
+				'images/dist/comp11.svg'
 			)
 
 			// Стадионы
 			const type12 = setMarkers(
 				map,
 				[[83.107629, 54.938091]],
-				'../images/dist/comp12.svg'
+				'images/dist/comp12.svg'
 			)
 
 			// Поликлиники
 			const type13 = setMarkers(
 				map,
 				[[83.107629, 54.938091]],
-				'../images/dist/comp13.svg'
+				'images/dist/comp13.svg'
 			)
 
 			// Салоны красоты
 			const type14 = setMarkers(
 				map,
 				[[83.107629, 54.938091]],
-				'../images/dist/comp14.svg'
+				'images/dist/comp14.svg'
 			)
 
 			map.fitBounds([
