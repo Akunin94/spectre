@@ -2,6 +2,13 @@
     margin-bottom: 40px;
     position: relative;
 
+    @include bp(md1) {
+        margin-bottom: 60px;
+    }
+    @include bp(xl) {
+        margin-bottom: 80px;
+    }
+
     .slick-arrow {
         position: absolute;
         left: 20px;
@@ -27,6 +34,12 @@
         @include bp(md) {
             top: 512px;
         }
+        @include bp(md1) {
+            left: auto;
+            right: 630px;
+            bottom: 40px;
+            top: auto;
+        }
 
         &:before {
             position: absolute;
@@ -41,6 +54,11 @@
         &.slick-next {
             transform: rotate(0);
             margin-left: 79px;
+
+            @include bp(md1) {
+                margin-left: 0;
+                margin-right: -79px;
+            }
         }
 
         &:hover {
@@ -74,10 +92,33 @@
         @include bp(md) {
             top: 492px;
         }
+        @include bp(md1) {
+            top: auto;
+            bottom: 0;
+            right: 344px;
+            width: 157px;
+            height: 157px;
+            font-size: 45px;
+            align-items: baseline;
+            padding-top: 40px;
+            border-radius: 7px 7px 0 0;
+        }
     }
 
-    &__item {
+    &__current {
+        @include bp(md1) {
+            font-size: 70px;
+            line-height: 1;
+        }
+    }
+
+    &__item.slick-slide {
         border-radius: 7px 0px 0px 7px;
+
+        @include bp(md1) {
+            display: flex;
+            flex-direction: row-reverse;
+        }
     }
 
     &__image {
@@ -100,12 +141,32 @@
         @include bp(md) {
             height: 600px;
         }
+        @include bp(md1) {
+            flex-shrink: 0;
+            width: 441px;
+            height: 546px;
+            border-radius: 0 7px 7px 0;
+            margin: 0;
+        }
     }
 
     &__text {
         background: radial-gradient(88.19% 175.2% at 52.04% 17.58%, rgba(79, 104, 147, 0.56) 0%, rgba(255, 255, 255, 0.196) 100%), #546581;
         padding: 30px 20px 25px;
         border-radius: 7px;
+
+        @include bp(md1) {
+            border-radius: 7px 0 0 7px;
+            margin-right: -1px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 40px 60px 120px 80px;
+        }
+        @include bp(xl) {
+            padding-top: 90px;
+            padding-bottom: 140px;
+        }
     }
 
     &__title {
@@ -114,6 +175,11 @@
         margin-bottom: 9px;
         font-weight: bold;
         color: #fff;
+
+        @include bp(md1) {
+            font-size: 45px;
+            margin-bottom: 29px;
+        }
     }
 
     &__subtitle {
@@ -122,11 +188,21 @@
         color: #fff;
         font-weight: 600;
         margin-bottom: 14px;
+
+        @include bp(md1) {
+            font-size: 24px;
+            margin-bottom: 19px;
+        }
     }
 
     &__description {
         font-size: 14px;
         line-height: 1;
         color: #fff;
+
+        @include bp(md1) {
+            font-size: 18px;
+            line-height: 1.2;
+        }
     }
 }

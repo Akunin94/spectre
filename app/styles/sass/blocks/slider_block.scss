@@ -40,7 +40,12 @@
 
         &.slick-next {
             transform: rotate(0);
-            margin-right: -79px;
+            margin-left: 79px;
+
+            @include bp(md1) {
+                margin-left: 0;
+                margin-right: -79px;
+            }
         }
 
         &:hover {
@@ -194,6 +199,7 @@
             flex-shrink: 0;
             width: 441px;
             height: 546px;
+            margin: 0;
         }
     }
 

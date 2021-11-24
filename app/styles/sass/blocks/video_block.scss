@@ -9,6 +9,15 @@
         margin-left: -20px;
         margin-right: -20px;
     }
+    @include bp(md1) {
+        margin-left: -35px;
+        margin-right: -35px;
+        padding: 71px 40px 57px;
+        margin-bottom: 50px;
+    }
+    @include bp(xl) {
+        margin-bottom: 73px;
+    }
 
     &__title {
         font-size: 26px;
@@ -16,12 +25,24 @@
         font-weight: bold;
         margin-bottom: 13px;
         text-transform: uppercase;
+
+        @include bp(md1) {
+            font-size: 45px;
+            max-width: 520px;
+            margin: 0 auto 27px;
+        }
     }
 
     &__description {
         font-size: 16px;
         line-height: 1;
         margin-bottom: 36px;
+
+        @include bp(md1) {
+            font-size: 20px;
+            max-width: 360px;
+            margin: 0 auto 30px;
+        }
     }
 
     &__button {

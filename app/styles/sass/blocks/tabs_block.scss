@@ -1,12 +1,21 @@
 .spectre-tabs {
     padding-bottom: 14px;
 
+    @include bp(md1) {
+        padding-bottom: 20px;
+    }
+
     &__title {
         font-size: 26px;
         line-height: 1;
         margin-bottom: 12px;
         font-weight: bold;
         color: #333;
+
+        @include bp(md1) {
+            font-size: 45px;
+            margin-bottom: 37px;
+        }
     }
 
     &__description {
@@ -14,6 +23,12 @@
         line-height: 1;
         margin-bottom: 28px;
         color: #777;
+
+        @include bp(md1) {
+            font-size: 18px;
+            line-height: 1.2;
+            margin-bottom: 44px;
+        }
     }
 
     &__blocks {
@@ -42,6 +57,9 @@
             @include bp(md) {
                 flex-wrap: wrap;
             }
+            @include bp(md1) {
+                margin-left: -40px;
+            }
         }
 
         &-item {
@@ -64,6 +82,15 @@
                 &:nth-child(3n) ~ & {
                     margin-top: 20px;
                 }
+            }
+            @include bp(md1) {
+                flex: 0 0 calc(33.333% - 40px);
+                max-width: calc(33.333% - 40px);
+                margin-left: 40px;
+                margin-bottom: 30px;
+                padding-right: 25px;
+                padding-bottom: 40px;
+                padding-left: 24px;
             }
         }
 
@@ -94,6 +121,11 @@
             font-size: 40px;
             line-height: 1;
             margin-bottom: 18px;
+
+            @include bp(md1) {
+                font-size: 45px;
+                margin-bottom: 24px;
+            }
         }
 
         &-btn {

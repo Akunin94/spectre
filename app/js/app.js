@@ -63,30 +63,93 @@ $(function(){
 	// SLIDERS END
 
 	// CALC START
+	let calc = {
+		summ: 1500000,
+		year: 1
+	}
+	let numberFormat = {
+		to: function (value) {
+			return value.toFixed(0);
+		},
+		from: function (value) {
+			return Number(value);
+		}
+	};
+	
 	$('.spectre-calc__block-left-slider').each(function(){
 		let $this = $(this),
 			slider = $this.get(0),
 			min = $this.data('min'),
 			max = $this.data('max'),
-			step = $this.data('step');
+			step = $this.data('step'),
+			hasTooltips = ($this.hasClass('spectre-calc__block-left-slider--year')) ? true : false;
 
 		noUiSlider.create(slider, {
+			connect: [false, true],
 			start: [min],
 			step,
+			tooltips: [hasTooltips],
 			range: {
 				'min': [min],
 				'max': [max]
-			}
+			},
+			format: numberFormat
 		});
 
 		slider.noUiSlider.on('update', function(values){
+			if ($this.hasClass('spectre-calc__block-left-slider--summ')) {
+				calc.summ = +values[0];
+				$('#spectre-calc-summ').text(formatMoney(calc.summ))
+			} else if ($this.hasClass('spectre-calc__block-left-slider--year')) {
+				// calc.year = +values[0];
+				// $('#spectre-calc-year').text(calc.year)
+
+				// if (calc.year == 1) {
+				// 	$('#spectre-calc-year-text').text('год')
+				// } else if (calc.year > 1 && calc.year < 5) {
+				// 	$('#spectre-calc-year-text').text('года')
+				// } else {
+				// 	$('#spectre-calc-year-text').text('лет')
+				// }
+			}
+
 			spectreCalc();
 		});
 	});
 
 	function spectreCalc() {
+		var S = calc.summ;
+		var n = calc.year;
+		var p = calc.summ < 3000000 ? 3 : 4.7;
 
+		console.log(S, p, n)
+
+		if (
+			typeof S != "number" ||
+			typeof p != "number" ||
+			typeof n != "number"
+		) return false;
+
+		p = p / 1200;
+		n = n * 12;
+
+		$('#spectre-permonth').text(formatMoney(S * p / (1 - Math.pow(1 + p, -n))));
 	}
+	function formatMoney(amount, decimalCount = 0, decimal = ".", thousands = " ") {
+		try {
+			decimalCount = Math.abs(decimalCount);
+			decimalCount = isNaN(decimalCount) ? 2 : decimalCount;
+	
+			const negativeSign = amount < 0 ? "-" : "";
+	
+			let i = parseInt(amount = Math.abs(Number(amount) || 0).toFixed(decimalCount)).toString();
+			let j = (i.length > 3) ? i.length % 3 : 0;
+	
+			return negativeSign + (j ? i.substr(0, j) + thousands : '') + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + thousands) + (decimalCount ? decimal + Math.abs(amount - i).toFixed(decimalCount).slice(2) : "");
+		} catch (e) {
+			console.log(e)
+		}
+	};
 	// CALC END
 
 

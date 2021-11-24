@@ -80,6 +80,7 @@ input, textarea {
 	color: #333;
 	width: 100%;
 	text-align: center;
+	font-family: $userfont;
 
 	&::-webkit-input-placeholder, &:-ms-input-placeholder, &::placeholder, &::-moz-placeholder {
 		color: #333;
@@ -99,6 +100,7 @@ input, textarea {
 	cursor: pointer;
 	transition: 0.2s;
 	font-weight: 600;
+	font-family: $userfont;
 
 	@include bp(md1) {
 		padding-top: 13px;
@@ -195,6 +197,10 @@ img {
 			background: url(../images/dist/blur_pic1.png) 0 0 / 100% no-repeat;
 		}
 	}
+}
+
+.spectre-wrapper {
+	overflow: hidden;
 }
 
 .spectre-title {

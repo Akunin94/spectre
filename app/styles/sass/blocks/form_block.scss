@@ -55,6 +55,8 @@
 
                 @include bp(md1) {
                     flex-grow: 1;
+                    margin-left: auto;
+                    margin-right: auto;
                 }
 
                 .spectre-form-block__right-form-note {

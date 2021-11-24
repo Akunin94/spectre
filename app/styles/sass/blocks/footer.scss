@@ -4,6 +4,13 @@
     padding: 40px 30px 30px;
     color: #777;
 
+    @include bp(md1) {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding-bottom: 80px;
+    }
+
     a {
         color: #777;
         text-decoration: none;
@@ -17,12 +24,30 @@
 
     &__left {
         margin-bottom: 23px;
+
+        @include bp(md1) {
+            margin-bottom: 0;
+            flex: 0 0 360px;
+            text-align: left;
+        }
+    }
+
+    &__right {
+
+        @include bp(md1) {
+            flex: 0 0 460px;
+            text-align: right;
+        }
     }
 
     &__logo {
         display: inline-block;
         font-size: 0;
         margin-bottom: 20px;
+
+        @include bp(md1) {
+            margin-bottom: 33px;
+        }
 
         img {
             width: auto;
