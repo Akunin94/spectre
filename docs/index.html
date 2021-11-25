@@ -17,15 +17,12 @@
 
 <body>
 	<div class="spectre-wrapper">
-		<header class="spectre-header">
-			<a href="/" class="spectre-header__logo">
-				<img loading="lazy" width="112" height="29" src="images/dist/logo.svg" alt="СПЕКТР">
-			</a>
-			<a class="spectre-header__phone" href="tel:73833991100">+7 (383) 399-11-00</a>
-			<div class="spectre-header__burger"></div>
-			<div class="spectre-header__popup">
+		<div class="spectre-wrap">
+			<div class="spectre-wrap__left">
 				<div class="spectre-header__popup-scroller">
-					<div class="spectre-header__popup-close"></div>
+					<a href="/" class="spectre-wrap__logo">
+						<img src="images/dist/logo_white.svg" alt="СПЕКТР">
+					</a>
 					<div class="spectre-header__popup-menu">
 						<ul>
 							<li>
@@ -57,10 +54,56 @@
 							</li>
 						</ul>
 					</div>
+					<a class="spectre-wrap__phone" href="tel:73833991100">+7 (383) 399-11-00</a>
+					<div class="spectre-wrap__info">Официальный сайт жилого комплекса «Спектр». Застройщик АКД-Мета</div>
 				</div>
 			</div>
-		</header>
+			<div class="spectre-wrap__right">
+				<header class="spectre-header">
+					<a href="/" class="spectre-header__logo">
+						<img loading="lazy" width="112" height="29" src="images/dist/logo.svg" alt="СПЕКТР">
+					</a>
+					<a class="spectre-header__phone" href="tel:73833991100">+7 (383) 399-11-00</a>
+					<div class="spectre-header__burger"></div>
+					<div class="spectre-header__popup">
+						<div class="spectre-header__popup-scroller">
+							<div class="spectre-header__popup-close"></div>
+							<div class="spectre-header__popup-menu">
+								<ul>
+									<li>
+										<a href="#header">Главная</a>
+									</li>
+									<li>
+										<a href="#main">Преимущества</a>
+									</li>
+									<li>
+										<a href="#transport">Транспорт</a>
+									</li>
+									<li>
+										<a href="#prices">Новостройка по дешевке</a>
+									</li>
+									<li>
+										<a class="spectre-special" href="#ipoteka">Ипотека 3%</a>
+									</li>
+									<li>
+										<a href="#properties">Особенности квартиры</a>
+									</li>
+									<li>
+										<a href="#products">
+											Планировки и цены
+											<img width="16" height="18" src="images/dist/menu_icon1.svg" alt="Особенности квартиры">
+										</a>
+									</li>
+									<li>
+										<a href="#advantages">О застройщике</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</header>
 <div class="spectre-main-block" id="header">
+	<a class="spectre-main-block__phone" href="tel:73833991100">+7 (383) 399-11-00</a>
 	<div class="spectre-main-block__wrap">
 		<h1 class="spectre-main-block__title"><span style="color: #333333;">ВСЕ </span><span style="color: #80BF63;">ОТТЕНКИ </span><span style="color: #FA4545;">СЧАСТЬЯ</span></h1>
 		<div class="spectre-main-block__description">«Спектр» — новая история в жизни одного из самых тихих и живописных мест Новосибирской области, наукограда Кольцово.</div>
@@ -380,12 +423,16 @@
 				<div class="spectre-calc__block-form-title">Заполните форму и получите решение</div>
 				<div class="spectre-calc__block-form-description">Примерный какой-то тект, бла бла бла бла, ипотека и тд.</div>
 				<div class="spectre-calc__block-form-field">
-					<input type="text" placeholder="Телефон" required class="spectre-input">
+					<input type="text" name="phone" placeholder="Телефон" required class="spectre-input">
 				</div>
 				<div class="spectre-calc__block-form-field">
 					<button type="submit" class="spectre-calc__block-form-button spectre-btn spectre-btn--big spectre-btn--secondary">Отправить</button>
 				</div>
 				<div class="spectre-calc__block-form-note">Я согласен с пользовательским соглашением и политикой конфиденциальности</div>
+				<div class="spectre-calc__block-form-title spectre-calc__block-form-title--success">
+					Спасибо!
+					<div class="spectre-calc__block-form-note">Мы получили заявку и в ближайшее время перезвоним к вам</div>
+				</div>
 			</form>
 		</div>
 	</div>
@@ -443,62 +490,40 @@
     <div class="spectre-tabs" id="products">
 	<div class="spectre-tabs__title">Планировка и цены</div>
 	<div class="spectre-tabs__description">Идеальное решение для тех, кто хочет самостоятельно заняться организацией отделочных работ выбрав свой уникальный стиль и материалы для проведения отделки.</div>
+	<div class="spectre-tabs__nav">
+		<div class="spectre-tabs__nav-item">97 м² – 105м²</div>
+		<div class="spectre-tabs__nav-item">98 м² – 105м²</div>
+		<div class="spectre-tabs__nav-item">99 м² – 105м²</div>
+		<div class="spectre-tabs__nav-item spectre-tabs__nav-item--all">х сбросить</div>
+	</div>
 	<div class="spectre-tabs__blocks">
-		<div class="spectre-tabs__blocks-block spectre-tabs__blocks-block--all">
-			<div class="spectre-tabs__blocks-list">
-				<div class="spectre-tabs__blocks-item">
-					<div class="spectre-tabs__blocks-label">СУПЕРЦЕНА</div>
-					<img width="158" height="271" loading="lazy" src="images/dist/tab_pic1.png" alt="" class="spectre-tabs__blocks-img">
-					<div class="spectre-tabs__blocks-square">
-						<strong>98,34</strong> м²
-					</div>
-					<div class="spectre-tabs__blocks-btn spectre-btn spectre-btn--secondary spectre-popup">Узнать стоимость</div>
-				</div>
-				<div class="spectre-tabs__blocks-item">
-					<div class="spectre-tabs__blocks-label">СУПЕРЦЕНА</div>
-					<img width="158" height="271" loading="lazy" src="images/dist/tab_pic1.png" alt="" class="spectre-tabs__blocks-img">
-					<div class="spectre-tabs__blocks-square">
-						<strong>98,34</strong> м²
-					</div>
-					<div class="spectre-tabs__blocks-btn spectre-btn spectre-btn--secondary spectre-popup">Узнать стоимость</div>
-				</div>
-				<div class="spectre-tabs__blocks-item">
-					<div class="spectre-tabs__blocks-label">СУПЕРЦЕНА</div>
-					<img width="158" height="271" loading="lazy" src="images/dist/tab_pic1.png" alt="" class="spectre-tabs__blocks-img">
-					<div class="spectre-tabs__blocks-square">
-						<strong>98,34</strong> м²
-					</div>
-					<div class="spectre-tabs__blocks-btn spectre-btn spectre-btn--secondary spectre-popup">Узнать стоимость</div>
-				</div>
-				<div class="spectre-tabs__blocks-item">
-					<div class="spectre-tabs__blocks-label">СУПЕРЦЕНА</div>
-					<img width="158" height="271" loading="lazy" src="images/dist/tab_pic1.png" alt="" class="spectre-tabs__blocks-img">
-					<div class="spectre-tabs__blocks-square">
-						<strong>98,34</strong> м²
-					</div>
-					<div class="spectre-tabs__blocks-btn spectre-btn spectre-btn--secondary spectre-popup">Узнать стоимость</div>
-				</div>
-				<div class="spectre-tabs__blocks-item">
-					<div class="spectre-tabs__blocks-label">СУПЕРЦЕНА</div>
-					<img width="158" height="271" loading="lazy" src="images/dist/tab_pic1.png" alt="" class="spectre-tabs__blocks-img">
-					<div class="spectre-tabs__blocks-square">
-						<strong>98,34</strong> м²
-					</div>
-					<div class="spectre-tabs__blocks-btn spectre-btn spectre-btn--secondary spectre-popup">Узнать стоимость</div>
-				</div>
-				<div class="spectre-tabs__blocks-item">
-					<div class="spectre-tabs__blocks-label">СУПЕРЦЕНА</div>
-					<img width="158" height="271" loading="lazy" src="images/dist/tab_pic1.png" alt="" class="spectre-tabs__blocks-img">
-					<div class="spectre-tabs__blocks-square">
-						<strong>98,34</strong> м²
-					</div>
-					<div class="spectre-tabs__blocks-btn spectre-btn spectre-btn--secondary spectre-popup">Узнать стоимость</div>
-				</div>
-			</div>
-		</div>
 		<div class="spectre-tabs__blocks-block">
 			<div class="spectre-tabs__blocks-title">97 м² — 105 м²</div>
 			<div class="spectre-tabs__blocks-list">
+				<div class="spectre-tabs__blocks-item">
+					<div class="spectre-tabs__blocks-label">СУПЕРЦЕНА</div>
+					<img width="158" height="271" loading="lazy" src="images/dist/tab_pic1.png" alt="" class="spectre-tabs__blocks-img">
+					<div class="spectre-tabs__blocks-square">
+						<strong>98,34</strong> м²
+					</div>
+					<div class="spectre-tabs__blocks-btn spectre-btn spectre-btn--secondary spectre-popup">Узнать стоимость</div>
+				</div>
+				<div class="spectre-tabs__blocks-item">
+					<div class="spectre-tabs__blocks-label">СУПЕРЦЕНА</div>
+					<img width="158" height="271" loading="lazy" src="images/dist/tab_pic1.png" alt="" class="spectre-tabs__blocks-img">
+					<div class="spectre-tabs__blocks-square">
+						<strong>98,34</strong> м²
+					</div>
+					<div class="spectre-tabs__blocks-btn spectre-btn spectre-btn--secondary spectre-popup">Узнать стоимость</div>
+				</div>
+				<div class="spectre-tabs__blocks-item">
+					<div class="spectre-tabs__blocks-label">СУПЕРЦЕНА</div>
+					<img width="158" height="271" loading="lazy" src="images/dist/tab_pic1.png" alt="" class="spectre-tabs__blocks-img">
+					<div class="spectre-tabs__blocks-square">
+						<strong>98,34</strong> м²
+					</div>
+					<div class="spectre-tabs__blocks-btn spectre-btn spectre-btn--secondary spectre-popup">Узнать стоимость</div>
+				</div>
 				<div class="spectre-tabs__blocks-item">
 					<div class="spectre-tabs__blocks-label">СУПЕРЦЕНА</div>
 					<img width="158" height="271" loading="lazy" src="images/dist/tab_pic1.png" alt="" class="spectre-tabs__blocks-img">
@@ -544,6 +569,11 @@
 					</div>
 					<div class="spectre-tabs__blocks-btn spectre-btn spectre-btn--secondary spectre-popup">Узнать стоимость</div>
 				</div>
+			</div>
+		</div>
+		<div class="spectre-tabs__blocks-block">
+			<div class="spectre-tabs__blocks-title">99 м² — 105 м²</div>
+			<div class="spectre-tabs__blocks-list">
 				<div class="spectre-tabs__blocks-item">
 					<div class="spectre-tabs__blocks-label">СУПЕРЦЕНА</div>
 					<img width="158" height="271" loading="lazy" src="images/dist/tab_pic1.png" alt="" class="spectre-tabs__blocks-img">
@@ -554,9 +584,32 @@
 				</div>
 			</div>
 		</div>
-		<div class="spectre-tabs__blocks-block">
-			<div class="spectre-tabs__blocks-title">99 м² — 105 м²</div>
+		<div class="spectre-tabs__blocks-block spectre-tabs__blocks-block--all active">
 			<div class="spectre-tabs__blocks-list">
+				<div class="spectre-tabs__blocks-item">
+					<div class="spectre-tabs__blocks-label">СУПЕРЦЕНА</div>
+					<img width="158" height="271" loading="lazy" src="images/dist/tab_pic1.png" alt="" class="spectre-tabs__blocks-img">
+					<div class="spectre-tabs__blocks-square">
+						<strong>98,34</strong> м²
+					</div>
+					<div class="spectre-tabs__blocks-btn spectre-btn spectre-btn--secondary spectre-popup">Узнать стоимость</div>
+				</div>
+				<div class="spectre-tabs__blocks-item">
+					<div class="spectre-tabs__blocks-label">СУПЕРЦЕНА</div>
+					<img width="158" height="271" loading="lazy" src="images/dist/tab_pic1.png" alt="" class="spectre-tabs__blocks-img">
+					<div class="spectre-tabs__blocks-square">
+						<strong>98,34</strong> м²
+					</div>
+					<div class="spectre-tabs__blocks-btn spectre-btn spectre-btn--secondary spectre-popup">Узнать стоимость</div>
+				</div>
+				<div class="spectre-tabs__blocks-item">
+					<div class="spectre-tabs__blocks-label">СУПЕРЦЕНА</div>
+					<img width="158" height="271" loading="lazy" src="images/dist/tab_pic1.png" alt="" class="spectre-tabs__blocks-img">
+					<div class="spectre-tabs__blocks-square">
+						<strong>98,34</strong> м²
+					</div>
+					<div class="spectre-tabs__blocks-btn spectre-btn spectre-btn--secondary spectre-popup">Узнать стоимость</div>
+				</div>
 				<div class="spectre-tabs__blocks-item">
 					<div class="spectre-tabs__blocks-label">СУПЕРЦЕНА</div>
 					<img width="158" height="271" loading="lazy" src="images/dist/tab_pic1.png" alt="" class="spectre-tabs__blocks-img">
@@ -673,20 +726,22 @@
         </div>
     </div>
 </div>
-		<footer class="spectre-footer">
-			<div class="spectre-footer__left">
-				<a href="/" class="spectre-footer__logo">
-					<img loading="lazy" width="162" height="43" src="images/dist/logo-black.svg" alt="СПЕКТР">
-				</a>
-				<div class="spectre-footer__description">Официальный сайт жилого комплекса «Спектр». Застройщик «АКД»</div>
+				<footer class="spectre-footer">
+					<div class="spectre-footer__left">
+						<a href="/" class="spectre-footer__logo">
+							<img loading="lazy" width="162" height="43" src="images/dist/logo-black.svg" alt="СПЕКТР">
+						</a>
+						<div class="spectre-footer__description">Официальный сайт жилого комплекса «Спектр». Застройщик «АКД»</div>
+					</div>
+					<div class="spectre-footer__right">
+						<div class="spectre-footer__note">Застройщик «Сибирь». С проектной декларацией можно ознакомиться на сайтах <a href="#">domen.ru</a> и <a href="#">наш.дом.рф.</a> Предложение не является офертой. Приведенные данные и информация могут быть изменены. Наличие квартир, помещений, актуальные цены и данные о ЖК «Спектр» уточняйте в отделе продаж.</div>
+						<div class="spectre-footer__policy">
+							<a href="/" target="_blank" rel="noopener noreferrer">Политика персональных данных</a>
+						</div>
+					</div>
+				</footer>
 			</div>
-			<div class="spectre-footer__right">
-				<div class="spectre-footer__note">Застройщик «Сибирь». С проектной декларацией можно ознакомиться на сайтах <a href="#">domen.ru</a> и <a href="#">наш.дом.рф.</a> Предложение не является офертой. Приведенные данные и информация могут быть изменены. Наличие квартир, помещений, актуальные цены и данные о ЖК «Спектр» уточняйте в отделе продаж.</div>
-				<div class="spectre-footer__policy">
-					<a href="/" target="_blank" rel="noopener noreferrer">Политика персональных данных</a>
-				</div>
-			</div>
-		</footer>
+		</div>
 	</div>
 	<a href="#header" class="spectre-footer__linktop"></a>
 	<script src="js/app.min.js"></script>

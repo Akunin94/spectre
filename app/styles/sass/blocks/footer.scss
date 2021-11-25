@@ -10,6 +10,10 @@
         align-items: flex-end;
         padding-bottom: 80px;
     }
+    @include bp(xxl) {
+        padding-left: 80px;
+        padding-right: 80px;
+    }
 
     a {
         color: #777;

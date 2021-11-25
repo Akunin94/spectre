@@ -2,7 +2,7 @@ import $ from 'jquery';
 import "slick-carousel";
 import noUiSlider from 'nouislider'
 
-// JQUERY FIX +++++
+// JQUERY FIX START
 jQuery.event.special.touchstart = {
 	setup: function (_, ns, handle) {
 		this.addEventListener("touchstart", handle, { passive: !ns.includes("noPreventDefault") });
@@ -23,7 +23,7 @@ jQuery.event.special.mousewheel = {
 		this.addEventListener("mousewheel", handle, { passive: true });
 	},
 };
-// JQUERY FIX -----
+// JQUERY FIX END
 
 $(function(){
 	// BURGER START
@@ -101,7 +101,7 @@ $(function(){
 				calc.summ = +values[0];
 				$('#spectre-calc-summ').text(formatMoney(calc.summ))
 			} else if ($this.hasClass('spectre-calc__block-left-slider--year')) {
-				// calc.year = +values[0];
+				calc.year = +values[0];
 				// $('#spectre-calc-year').text(calc.year)
 
 				// if (calc.year == 1) {
@@ -122,8 +122,6 @@ $(function(){
 		var n = calc.year;
 		var p = calc.summ < 3000000 ? 3 : 4.7;
 
-		console.log(S, p, n)
-
 		if (
 			typeof S != "number" ||
 			typeof p != "number" ||
@@ -135,28 +133,13 @@ $(function(){
 
 		$('#spectre-permonth').text(formatMoney(S * p / (1 - Math.pow(1 + p, -n))));
 	}
-	function formatMoney(amount, decimalCount = 0, decimal = ".", thousands = " ") {
-		try {
-			decimalCount = Math.abs(decimalCount);
-			decimalCount = isNaN(decimalCount) ? 2 : decimalCount;
-	
-			const negativeSign = amount < 0 ? "-" : "";
-	
-			let i = parseInt(amount = Math.abs(Number(amount) || 0).toFixed(decimalCount)).toString();
-			let j = (i.length > 3) ? i.length % 3 : 0;
-	
-			return negativeSign + (j ? i.substr(0, j) + thousands : '') + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + thousands) + (decimalCount ? decimal + Math.abs(amount - i).toFixed(decimalCount).slice(2) : "");
-		} catch (e) {
-			console.log(e)
-		}
-	};
 	// CALC END
 
 
 	// SLIDER SOLO START
-		let $slider = $('.spectre-slider1__slider'),
-		$items = $slider.find('.spectre-slider1__item'),
-		itemsLength = $items.length;
+	let $slider = $('.spectre-slider1__slider'),
+	$items = $slider.find('.spectre-slider1__item'),
+	itemsLength = $items.length;
 
 	if ( itemsLength > 1 ) {
 		$slider.on('init', function(slick){
@@ -265,6 +248,17 @@ $(function(){
 
 		return false;
 	});
+	$('.spectre-calc__block-form').on('submit', function(){
+		let $this = $(this),
+			$success_block = $('.spectre-calc__block-form-title--success, .spectre-calc__block-form'),
+			$hide_block = $('.spectre-calc__block-form > *'),
+			url = $this.data('action'),
+			formData = $this.serialize();
+
+		formAjax(url, formData, $this, $success_block, $hide_block)
+
+		return false;
+	});
 
 	function formAjax(url, formData, $form, $success_block, $hide_block) {
 		$.ajax({
@@ -308,6 +302,8 @@ $(function(){
 
 			if ($("body").width() < 1200) {
 				position = position - 60;
+			} else {
+				position = position - 5;
 			}
 
 			$("html, body").animate({ scrollTop: position }, 800);
@@ -319,6 +315,22 @@ $(function(){
 		}
 	);
 	// ANCHOR MENU END
+
+
+
+	// TABS START
+	$(document).on('click', '.spectre-tabs__nav-item:not(.active)', function(){
+		let $this = $(this),
+			index = $this.index(),
+			$body = $this.closest('.spectre-tabs').find('.spectre-tabs__blocks-block').eq(index);
+		
+		$this.addClass('active');
+		$this.siblings().removeClass('active');
+
+		$body.addClass('active');
+		$body.siblings().removeClass('active');
+	});
+	// TABS END
 
 
 
@@ -571,4 +583,22 @@ $(function(){
 	
 	init2Gis()
 	// MAP END
+
+
+
+	function formatMoney(amount, decimalCount = 0, decimal = ".", thousands = " ") {
+		try {
+			decimalCount = Math.abs(decimalCount);
+			decimalCount = isNaN(decimalCount) ? 2 : decimalCount;
+	
+			const negativeSign = amount < 0 ? "-" : "";
+	
+			let i = parseInt(amount = Math.abs(Number(amount) || 0).toFixed(decimalCount)).toString();
+			let j = (i.length > 3) ? i.length % 3 : 0;
+	
+			return negativeSign + (j ? i.substr(0, j) + thousands : '') + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + thousands) + (decimalCount ? decimal + Math.abs(amount - i).toFixed(decimalCount).slice(2) : "");
+		} catch (e) {
+			console.log(e)
+		}
+	};
 });

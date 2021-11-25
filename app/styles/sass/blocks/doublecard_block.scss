@@ -49,6 +49,13 @@
 
             & + & {
                 max-width: 300px;
+
+                @include bp(hd) {
+                    max-width: 400px;
+                }
+                @include bp(fhd) {
+                    max-width: 500px;
+                }
             }
         }
 

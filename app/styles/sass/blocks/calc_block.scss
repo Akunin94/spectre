@@ -1,11 +1,25 @@
 .spectre-calc {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
+
+    @include bp(md1) {
+        margin-bottom: 60px;
+    }
+    @include bp(xl) {
+        margin-bottom: 80px;
+    }
 
     &__title {
         font-size: 26px;
         line-height: 1;
         font-weight: 700;
         margin-bottom: 26px;
+
+        @include bp(md1) {
+            font-size: 45px;
+        }
+        @include bp(xl) {
+            margin-bottom: 48px;
+        }
     }
 
     &__block {
@@ -17,12 +31,31 @@
         @include bp(md) {
             padding: 60px 40px 40px;
         }
+        @include bp(md1) {
+            padding: 42px 30px 40px;
+        }
+        @include bp(xl) {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        &-calc {
+            @include bp(xl) {
+                flex: 1 0 1%;
+            }
+        }
 
         &-title {
             font-size: 20px;
             line-height: 1;
             font-weight: 700;
             margin-bottom: 26px;
+
+            @include bp(md1) {
+                font-size: 30px;
+                line-height: 1.1;
+                margin-bottom: 37px;
+            }
         }
 
         &-left {
@@ -30,6 +63,10 @@
             @include bp(md) {
                 display: flex;
                 margin-left: -60px;
+            }
+            @include bp(md1) {
+                display: flex;
+                margin-left: -95px;
             }
 
             &-sliders {
@@ -39,6 +76,15 @@
                     flex: 0 0 calc(50% - 60px);
                     max-width: calc(50% - 60px);
                     margin-left: 60px;
+                }
+                @include bp(md1) {
+                    flex: 0 0 calc(50% - 95px);
+                    max-width: calc(50% - 95px);
+                    margin-left: 95px;
+                }
+                @include bp(xl) {
+                    flex: 0 0 calc(55% - 95px);
+                    max-width: calc(55% - 95px);
                 }
             }
 
@@ -52,6 +98,15 @@
                     flex: 0 0 calc(50% - 60px);
                     max-width: calc(50% - 60px);
                     margin-left: 60px;
+                }
+                @include bp(md1) {
+                    flex: 0 0 calc(50% - 95px);
+                    max-width: calc(50% - 95px);
+                    margin-left: 95px;
+                }
+                @include bp(xl) {
+                    flex: 0 0 calc(45% - 95px);
+                    max-width: calc(45% - 95px);
                 }
 
                 &-item {
@@ -68,12 +123,20 @@
                         max-width: 100%;
                         margin-left: 0;
                     }
+                    @include bp(xl) {
+                        margin-bottom: 27px;
+                    }
                 }
 
                 &-title {
                     font-size: 14px;
                     line-height: 1;
                     margin-bottom: 7px;
+
+                    @include bp(md1) {
+                        font-size: 18px;
+                        margin-bottom: 8px;
+                    }
                 }
 
                 &-body {
@@ -86,6 +149,10 @@
                         font-weight: 600;
                         margin: 0 2px;
                         white-space: nowrap;
+                    }
+
+                    @include bp(md1) {
+                        font-size: 18px;
                     }
                 }
             }
@@ -172,6 +239,21 @@
                 flex-wrap: wrap;
                 margin-left: -60px;
             }
+            @include bp(md1) {
+                margin-left: -95px;
+            }
+            @include bp(xl) {
+                order: 3;
+                width: calc(100% + 20px);
+                margin: 50px -10px 0;
+                justify-content: center;
+                padding-bottom: 0;
+            }
+            @include bp(hd) {
+                width: calc(100% + 40px);
+                margin-left: -20px;
+                margin-right: -20px;
+            }
 
             &-item {
                 margin-bottom: 20px;
@@ -187,11 +269,41 @@
                     max-width: calc(50% - 60px);
                     margin-left: 60px;
                 }
+                @include bp(md1) {
+                    flex: 0 0 calc(50% - 95px);
+                    max-width: calc(50% - 95px);
+                    margin-left: 95px;
+                }
+                @include bp(xl) {
+                    flex-basis: auto;
+                    max-width: none;
+                    margin: 0 10px 20px 10px;
+                    letter-spacing: -0.2px;
+                    padding-left: 36px;
+                }
+                @include bp(hd) {
+                    margin-left: 20px;
+                    margin-right: 20px;
+                    padding-left: 40px;
+                    letter-spacing: 0;
+                }
             }
         }
 
         &-right {
-
+            @include bp(xl) {
+                flex: 0 0 270px;
+                max-width: 270px;
+                margin-left: 60px;
+            }
+            @include bp(hd) {
+                flex-basis: 320px;
+                max-width: 320px;
+            }
+            @include bp(fhd) {
+                flex-basis: 400px;
+                max-width: 400px;
+            }
         }
 
         &-form {
@@ -201,11 +313,30 @@
             color: #333;
             text-align: center;
 
+            @include bp(md1) {
+                padding: 45px 20px;
+            }
+
             &-title {
                 font-size: 24px;
                 line-height: 1;
-                font-weight: 600;
-                margin-bottom: 17px;
+                font-weight: bold;
+                margin: 0 -2px 17px;
+
+                &--success {
+                    margin-bottom: 0;
+                    display: none;
+                    text-align: center;
+    
+                    .spectre-calc__block-form-note {
+                        margin-top: 24px;
+                        font-weight: normal;
+    
+                        @include bp(md1) {
+                            font-size: 16px;
+                        }
+                    }
+                }
             }
 
             &-description {
@@ -213,6 +344,11 @@
                 line-height: 1;
                 margin-bottom: 23px;
                 color: #777;
+
+                @include bp(md1) {
+                    font-size: 18px;
+                    line-height: 1.2;
+                }
             }
 
             &-field {
@@ -228,6 +364,10 @@
                 font-size: 12px;
                 line-height: 1;
                 color: #777;
+
+                @include bp(md1) {
+                    margin-top: -2px;
+                }
             }
         }
     }

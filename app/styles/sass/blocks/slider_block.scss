@@ -248,6 +248,9 @@
             font-size: 35px;
             margin-bottom: 20px;
         }
+        @include bp(xxxl) {
+            padding-right: 70px;
+        }
     }
 
     &__subtitle {

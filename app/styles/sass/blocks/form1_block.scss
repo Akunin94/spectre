@@ -16,6 +16,10 @@
         margin-right: -35px;
         padding: 60px 60px 80px;
     }
+    @include bp(xxxl) {
+        margin-left: -80px;
+        margin-right: -80px;
+    }
 
     &__form {
         text-align: center;
@@ -24,6 +28,11 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+        }
+        @include bp(xxl) {
+            max-width: 762px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         &-title {

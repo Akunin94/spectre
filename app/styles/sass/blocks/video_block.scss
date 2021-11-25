@@ -18,6 +18,10 @@
     @include bp(xl) {
         margin-bottom: 73px;
     }
+    @include bp(xxxl) {
+        margin-left: -80px;
+        margin-right: -80px;
+    }
 
     &__title {
         font-size: 26px;
