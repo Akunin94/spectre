@@ -303,7 +303,11 @@ $(function(){
 			if ($("body").width() < 1200) {
 				position = position - 60;
 			} else {
-				position = position - 5;
+				if (this.hash == '#main') {
+					position -= 50;
+				} else if (this.hash == '#ipoteka' || this.hash == '#properties' || this.hash == '#products') {
+					position -= 20;
+				}
 			}
 
 			$("html, body").animate({ scrollTop: position }, 800);
@@ -340,8 +344,8 @@ $(function(){
 
 		DG.then(function () {
 			map = DG.map('map', {
-				center: [54.939079, 83.104059],
-				zoom: 16,
+				center: [54.933891, 83.204766],
+				zoom: 15,
 				dragging : false,
 				touchZoom: false,
 				scrollWheelZoom: false,
@@ -352,129 +356,81 @@ $(function(){
 				fullscreenControl: false
 			});
 
-			// ЖК
-			const gkMarkers = setMarkers(
+			const mainMarker = setMarkers(
 				map,
-				[[83.098488, 54.940199]],
+				[[83.204766, 54.933891]],
 				'images/dist/logo_m.svg', true
 			)
-
-			// Супермаркеты
 			const type1 = setMarkers(
 				map,
-				[[83.10036,54.936759], [83.101402, 54.93731], [83.102079, 54.937463], [83.102965, 54.936669], [83.103721, 54.937732], [83.10458, 54.937463], [83.10557, 54.938226], [83.106378, 54.937807], [83.106039, 54.938675], [83.105622, 54.939034], [83.106508, 54.939288]],
+				[[83.193248, 54.937238], [83.179217, 54.943088], [83.180829, 54.938492]],
 				'images/dist/comp1.svg'
 			)
-
-			// Бассейн
 			const type2 = setMarkers(
 				map,
-				[[83.100386, 54.936789], [83.10458, 54.937328], [83.105049, 54.938091], [83.107368, 54.939438]],
+				[[83.188485, 54.935766]],
 				'images/dist/comp2.svg'
 			)
-
-			// Банкоматы
 			const type3 = setMarkers(
 				map,
-				[[83.105466, 54.939288], [83.106378, 54.937163], [83.105049, 54.938091], [83.107368, 54.939438]],
+				[[83.190377, 54.937737], [83.189960, 54.939897], [83.189636, 54.941630]],
 				'images/dist/comp3.svg'
 			)
-
-			// Фитнес
 			const type4 = setMarkers(
 				map,
-				[[83.107629, 54.938091]],
+				[[83.192169, 54.937294]],
 				'images/dist/comp4.svg'
 			)
-
-			// Зоотовары
 			const type5 = setMarkers(
 				map,
-				[[83.107629, 54.938091]],
+				[[83.197201, 54.938433], [83.190221, 54.937057]],
 				'images/dist/comp5.svg'
 			)
-
-			// Детские сады
 			const type6 = setMarkers(
 				map,
-				[[83.107629, 54.938091]],
+				[[83.204221, 54.933037], [83.204550, 54.934709], [83.202799, 54.933519], [83.202654, 54.934222]],
 				'images/dist/comp6.svg'
 			)
-
-			// Ледовый дворец
 			const type7 = setMarkers(
 				map,
-				[[83.107629, 54.938091]],
+				[],
 				'images/dist/comp7.svg'
 			)
-
-			// Аптеки
 			const type8 = setMarkers(
 				map,
-				[[83.107629, 54.938091]],
+				[[83.191037, 54.936409]],
 				'images/dist/comp8.svg'
 			)
-
-			// Кафе/рестораны
 			const type9 = setMarkers(
 				map,
-				[[83.107629, 54.938091]],
+				[[83.189865, 54.935236], [83.190510, 54.936281], [83.191115, 54.937813]],
 				'images/dist/comp9.svg'
 			)
-
-			// Транспорт
 			const type10 = setMarkers(
 				map,
-				[[83.107629, 54.938091]],
+				[],
 				'images/dist/comp10.svg'
 			)
-
-			// Школы/лицеи
 			const type11 = setMarkers(
 				map,
-				[[83.107629, 54.938091]],
+				[[83.192274, 54.934596]],
 				'images/dist/comp11.svg'
 			)
-
-			// Стадионы
 			const type12 = setMarkers(
 				map,
-				[[83.107629, 54.938091]],
+				[[83.204844, 54.934277], [83.202920, 54.934689]],
 				'images/dist/comp12.svg'
 			)
-
-			// Поликлиники
 			const type13 = setMarkers(
 				map,
-				[[83.107629, 54.938091]],
+				[[83.167767, 54.929303], [83.190574, 54.937137]],
 				'images/dist/comp13.svg'
 			)
-
-			// Салоны красоты
 			const type14 = setMarkers(
 				map,
-				[[83.107629, 54.938091]],
+				[[83.190933, 54.936937], [83.187923, 54.940724]],
 				'images/dist/comp14.svg'
 			)
-
-			map.fitBounds([
-				[54.940732, 83.097986],
-				gkMarkers.getBounds(),
-				type1.getBounds(),
-				type2.getBounds(),
-				type3.getBounds(),
-				type4.getBounds(),
-				type5.getBounds(),
-				type6.getBounds(),
-				type7.getBounds(),
-				type8.getBounds(),
-				type9.getBounds(),
-				type10.getBounds(),
-				type11.getBounds(),
-				type12.getBounds(),
-				type13.getBounds(),
-				type14.getBounds(),
-			])
 
 			function removeAllMarkers() {
 				const groups = [
@@ -550,7 +506,7 @@ $(function(){
 			})
 			$('.spectre-map__nav-item--all').click(function () {
 				removeAllMarkers()
-				gkMarkers.addTo(map);
+				mainMarker.addTo(map);
 				type1.addTo(map);
 				type2.addTo(map);
 				type3.addTo(map);
@@ -583,6 +539,36 @@ $(function(){
 	
 	init2Gis()
 	// MAP END
+
+
+
+	// ACTIVE MENU START
+	let scrollingBlocks = document.querySelectorAll('.spectre-section');
+
+	let leftMenu = document.querySelector('.anchor-menu'),
+		menuItems = leftMenu.querySelectorAll('a');
+
+	window.addEventListener('scroll', function () {
+		let windowTop = window.scrollY;
+
+		scrollingBlocks.forEach(function (item) {
+			let topPosition = item.offsetTop - 20,
+				bottomPosition = topPosition + item.clientHeight;
+
+			if (windowTop >= topPosition && windowTop <= bottomPosition && !item.classList.contains('active')) {
+				let id = $(item).attr('id');
+				let scrollingBlocksSiblings = document.querySelectorAll('.spectre-section:not(#'+id+')');
+
+				item.classList.add('active')
+				$(scrollingBlocksSiblings).removeClass('active');
+
+				let linkHref = item.id;
+				$('.spectre-header__popup-menu a').removeClass('active');
+				$('.spectre-header__popup-menu a[href="#'+linkHref+'"]').addClass('active');
+			}
+		});
+	});
+	// ACTIVE MENU END
 
 
 

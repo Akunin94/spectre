@@ -118,10 +118,14 @@
                             margin-left: 5px;
                         }
 
-                        &:hover {
+                        &:hover, &.active {
                             background: #e6ff31;
                             color: #000;
                             transition: 0.2s;
+
+                            &.spectre-special {
+                                color: #000;
+                            }
 
                             img {
                                 filter: brightness(0);

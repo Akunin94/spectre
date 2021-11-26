@@ -14,6 +14,14 @@
         font-weight: 700;
         margin-bottom: 26px;
 
+        br {
+            display: none;
+
+            @include bp(xl) {
+                display: block;
+            }
+        }
+
         @include bp(md1) {
             font-size: 45px;
         }

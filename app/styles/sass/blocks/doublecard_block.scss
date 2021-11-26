@@ -164,6 +164,11 @@
             line-height: 1;
             color: #fff;
             margin-bottom: 30px;
+
+            @include bp(md1) {
+                font-size: 18px;
+                line-height: 1.2;
+            }
         }
 
         &-btn {

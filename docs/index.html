@@ -21,12 +21,12 @@
 			<div class="spectre-wrap__left">
 				<div class="spectre-header__popup-scroller">
 					<a href="/" class="spectre-wrap__logo">
-						<img src="images/dist/logo_white.svg" alt="СПЕКТР">
+						<img loading="lazy" width="201" height="61" src="images/dist/logo_white.svg" alt="СПЕКТР">
 					</a>
-					<div class="spectre-header__popup-menu">
+					<div class="spectre-header__popup-menu anchor-menu">
 						<ul>
 							<li>
-								<a href="#header">Главная</a>
+								<a href="#header" class="active">Главная</a>
 							</li>
 							<li>
 								<a href="#main">Преимущества</a>
@@ -68,10 +68,10 @@
 					<div class="spectre-header__popup">
 						<div class="spectre-header__popup-scroller">
 							<div class="spectre-header__popup-close"></div>
-							<div class="spectre-header__popup-menu">
+							<div class="spectre-header__popup-menu anchor-menu1">
 								<ul>
 									<li>
-										<a href="#header">Главная</a>
+										<a href="#header" class="active">Главная</a>
 									</li>
 									<li>
 										<a href="#main">Преимущества</a>
@@ -102,19 +102,20 @@
 						</div>
 					</div>
 				</header>
-<div class="spectre-main-block" id="header">
+<div class="spectre-main-block spectre-section" id="header">
 	<a class="spectre-main-block__phone" href="tel:73833991100">+7 (383) 399-11-00</a>
 	<div class="spectre-main-block__wrap">
 		<h1 class="spectre-main-block__title"><span style="color: #333333;">ВСЕ </span><span style="color: #80BF63;">ОТТЕНКИ </span><span style="color: #FA4545;">СЧАСТЬЯ</span></h1>
-		<div class="spectre-main-block__description">«Спектр» — новая история в жизни одного из самых тихих и живописных мест Новосибирской области, наукограда Кольцово.</div>
+		<div class="spectre-main-block__description"><span>«Спектр» — новая история в жизни одного из самых тихих и живописных мест Новосибирской области, наукограда Кольцово.</span></div>
 	</div>
 	<div class="spectre-main-block__btn spectre-btn spectre-popup">УЗНАТЬ О КОМПЛЕКСЕ</div>
 	<a href="#main" class="spectre-main-block__downbutton" title="Дальше"></a>
 </div>
 
-<main class="spectre-main" id="main">
+<main class="spectre-main">
     <div class="spectre-title">Преимущества ЖК Спектр</div>
-    <div class="spectre-slider">
+    <div class="spectre-section" id="main">
+        <div class="spectre-slider">
 	<div class="spectre-slider__slider">
 		<div class="spectre-slider__item">
 			<div class="spectre-slider__image" style="background-image: url(images/dist/slider_pic1.png)"></div>
@@ -176,7 +177,7 @@
 		</div>
 	</div>
 </div>
-    <div class="spectre-cards">
+        <div class="spectre-cards">
 	<div class="spectre-cards__title">Чего нет в ЖК Спектр</div>
 	<div class="spectre-cards__cards">
 		<div class="spectre-cards__card" style="background-image: url(images/dist/cards_bg1.png);">
@@ -193,7 +194,9 @@
 		</div>
 	</div>
 </div>
-    <div class="spectre-info" id="transport">
+    </div>
+    <div class="spectre-section" id="transport">
+        <div class="spectre-info">
 	<div class="spectre-info__title">В город <span>БЕЗ ПРОБОК</span> за&nbsp;32&nbsp;минуты</div>
 	<div class="spectre-info__stats">
 		<div class="spectre-info__stats-image" style="background-image: url(images/dist/info_pic1.png)"></div>
@@ -244,7 +247,7 @@
 		<a href="#map_block" class="spectre-info__buttonwrap-button"></a>
 	</div>
 </div>
-    <div class="spectre-map" id="map_block">
+        <div class="spectre-map" id="map_block">
 	<div class="spectre-map__title">Инфраструктура</div>
 	<div class="spectre-map__nav">
 		<div class="spectre-map__nav-item spectre-map__nav-item--type1">
@@ -309,8 +312,9 @@
 	</div>
 	<div class="spectre-map__map" id="map"></div>
 </div>
-    <div class="spectre-prices" id="prices">
-	<div class="spectre-prices__title">Новостройка дешевле вторички</div>
+    </div>
+    <div class="spectre-prices spectre-section" id="prices">
+	<div class="spectre-prices__title">Новостройка <br />дешевле вторички</div>
 	<div class="spectre-prices__items">
 		<div class="spectre-prices__items-title">Квартира в ЖК «Спектр»</div>
 		<div class="spectre-prices__items-item">
@@ -342,7 +346,8 @@
 		</div>
 	</div>
 </div>
-    <div class="spectre-doublecard" id="ipoteka">
+    <div class="spectre-section" id="ipoteka">
+        <div class="spectre-doublecard">
     <div class="spectre-doublecard__title">Выгодная ипотека</div>
     <div class="spectre-doublecard__cards">
         <div class="spectre-doublecard__card spectre-doublecard__card--big" style="background-image: url(images/dist/cards_bg4.png);">
@@ -372,8 +377,8 @@
         </div>
     </div>
 </div>
-    <div class="spectre-calc">
-	<div class="spectre-calc__title">Другие ипотечные программы</div>
+        <div class="spectre-calc">
+	<div class="spectre-calc__title">Другие <br />ипотечные программы</div>
 	<div class="spectre-calc__block">
 		<div class="spectre-calc__block-calc">
 			<div class="spectre-calc__block-title">НАШИ СПЕЦИАЛИСТЫ ПОДБЕРУТ ПОДХОДЯЩИЙ ВАМ ИПОТЕЧНЫЙ ПРОДУКТ</div>
@@ -437,7 +442,7 @@
 		</div>
 	</div>
 </div>
-    <div class="spectre-form-block">
+        <div class="spectre-form-block">
 	<div class="spectre-form-block__left">
 		<div class="spectre-form-block__left-title">ОСТАВЬТЕ ЗАЯВКУ</div>
 		<div class="spectre-form-block__left-description">Оставьте свои контактные данные и получите консультацию менеджера по покупке квартиры по выгодным ценам, ипотеке или рассрочке в ЖК Спектр</div>
@@ -459,7 +464,9 @@
 		<div class="spectre-form-block__right-form-note">Мы получили заявку и в ближайшее время перезвоним к вам</div>
 	</div>
 </div>
-    <div class="spectre-slider1" id="properties">
+    </div>
+    <div class="spectre-section" id="properties">
+        <div class="spectre-slider1">
 	<div class="spectre-slider1__slider">
 		<div class="spectre-slider1__item">
 			<div class="spectre-slider1__image" style="background-image: url(images/dist/slider_pic4.png)"></div>
@@ -479,7 +486,7 @@
 		</div>
 	</div>
 </div>
-    <div class="spectre-video">
+        <div class="spectre-video">
 	<div class="spectre-video__title">Видеоэкскурсия в Спектр</div>
 	<div class="spectre-video__description">Какой-то примерный текст о жилом комплексе и видео</div>
 	<div class="spectre-video__button" data-url='<iframe width="1120" height="630" src="https://www.youtube.com/embed/DxNBhe9Svjw?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'></div>
@@ -487,7 +494,8 @@
 		
 	</div>
 </div>
-    <div class="spectre-tabs" id="products">
+    </div>
+    <div class="spectre-tabs spectre-section" id="products">
 	<div class="spectre-tabs__title">Планировка и цены</div>
 	<div class="spectre-tabs__description">Идеальное решение для тех, кто хочет самостоятельно заняться организацией отделочных работ выбрав свой уникальный стиль и материалы для проведения отделки.</div>
 	<div class="spectre-tabs__nav">
@@ -638,7 +646,8 @@
 		</div>
 	</div>
 </div>
-    <div class="spectre-advantages" id="advantages">
+    <div class="spectre-section" id="advantages">
+        <div class="spectre-advantages">
 	<div class="spectre-advantages__left">
         <div class="spectre-advantages__left-title">СПЕЦИАЛИЗИРОВАННЫЙ ЗАСТРОЙЩИК СЗ ГК АКД</div>
         <div class="spectre-advantages__left-description">На территории комплекса будет построен детский сад на 150 мест и общеобразовательная школа на 240 учебных мест. Внутренняя отделка и оформление фасада выполнены в светлых тонах с яркими цветовыми акцентами, что вызовет у наших маленьких жителей восторг и бурю эмоций.</div>
@@ -669,7 +678,7 @@
         </div>
     </div>
 </div>
-    <div class="spectre-form1-block">
+        <div class="spectre-form1-block">
 	<form action="send.php" class="spectre-form1-block__form">
 		<div class="spectre-form1-block__form-title">Остались вопросы?</div>
 		<div class="spectre-form1-block__form-description">Специалист свяжется с Вами и предоставит исчерпывающую информацию всего за один звонок</div>
@@ -686,6 +695,7 @@
 		<div class="spectre-form1-block__form-note">Мы получили заявку и в ближайшее время перезвоним к вам</div>
 	</div>
 </div>
+    </div>
 </main>
 
 <div class="spectre-popup-form">

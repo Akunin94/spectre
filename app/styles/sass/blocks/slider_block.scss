@@ -209,7 +209,7 @@
         border-radius: 7px;
 
         @include bp(md1) {
-            padding: 40px 60px 40px 80px;
+            padding: 40px 80px;
         }
 
         .slick-slider & {
@@ -232,7 +232,7 @@
     & ~ & ~ & &__text {
 
         @include bp(md1) {
-            padding-right: 60px;
+            padding-right: 80px;
             padding-left: 80px;
         }
     }

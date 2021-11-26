@@ -5,6 +5,10 @@
         margin-bottom: 80px;
     }
 
+    .leaflet-tile-container {
+        filter: grayscale(1);
+    }
+
     &__title {
         font-size: 26px;
         line-height: 33px;

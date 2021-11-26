@@ -88,6 +88,14 @@
             color: #333;
             padding: 0 25px 25px;
         }
+        @include bp(xxl) {
+            padding-bottom: 10px;
+
+            span {
+                position: relative;
+                top: -22px;
+            }
+        }
     }
 
     &__btn {

@@ -28,6 +28,14 @@
         font-weight: bold;
         width: 100%;
 
+        br {
+            display: none;
+
+            @include bp(xxl) {
+                display: block;
+            }
+        }
+
         @include bp(sm2) {
             padding-left: 40px;
         }
