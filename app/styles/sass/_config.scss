@@ -74,6 +74,7 @@
 @include font('futura-pt', italic, 600, '../fonts/FuturaPT-MediumObl.woff2');
 @include font('futura-pt', normal, bold, '../fonts/FuturaPT-Bold.woff2');
 @include font('futura-pt', italic, bold, '../fonts/FuturaPT-BoldObl.woff2');
+@include font('whitesaas', normal, normal, '../fonts/whitesaas.woff2');
 
 $accent: orange; // Accent Color
 $fontsize: 16px; // Body Font Size
@@ -158,6 +159,11 @@ input, textarea {
 
 		@include bp(xxxl) {
 			margin-bottom: 40px;
+		}
+
+		img {
+			width: auto;
+			height: auto;
 		}
 	}
 

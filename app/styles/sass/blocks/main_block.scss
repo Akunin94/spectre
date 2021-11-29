@@ -22,6 +22,9 @@
         min-height: 800px;
         padding-top: 195px;
     }
+    @include bp(hd) {
+        background-image: url(../images/dist/header_bg2.png);
+    }
 
     &__phone {
         display: none;
