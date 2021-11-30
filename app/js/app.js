@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import "slick-carousel";
 import noUiSlider from 'nouislider'
-import lightGallery from 'lightgallery';
+// import lightGallery from 'lightgallery';
 
 
 // JQUERY FIX START
@@ -236,6 +236,8 @@ $(function(){
 			url = $this.data('action'),
 			formData = $this.serialize();
 
+		ym(86694763,'reachGoal','zayavka')
+
 		formAjax(url, formData, $this, $success_block)
 
 		return false;
@@ -246,6 +248,8 @@ $(function(){
 			$hide_block = $this.closest('.spectre-form-block').find('>*'),
 			url = $this.data('action'),
 			formData = $this.serialize();
+
+		ym(86694763,'reachGoal','zayavka')
 
 		formAjax(url, formData, $this, $success_block, $hide_block)
 
@@ -337,11 +341,11 @@ $(function(){
 		$body.addClass('active');
 		$body.siblings().removeClass('active');
 	});
-	$('.spectre-tabs__blocks-image').each(function(){
-		lightGallery($(this).get(0), {
+	/*$('.spectre-tabs__blocks-image').each(function(){
+		 lightGallery($(this).get(0), {
 			counter: false
 		});
-	});
+	});*/
 	// TABS END
 
 
@@ -351,9 +355,10 @@ $(function(){
 		let map;
 
 		DG.then(function () {
+			const zoom = $('body').width() > 960 ? 14 : 13;
 			map = DG.map('map', {
 				center: [54.933891, 83.204766],
-				zoom: 14,
+				zoom,
 				dragging : true,
 				touchZoom: false,
 				scrollWheelZoom: false,

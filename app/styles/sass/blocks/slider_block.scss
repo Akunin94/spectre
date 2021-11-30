@@ -238,9 +238,9 @@
     }
 
     &__title {
-        font-size: 20px;
+        font-size: 26px;
         line-height: 1;
-        margin-bottom: 9px;
+        margin-bottom: 10px;
         font-weight: bold;
         color: #333;
 
@@ -254,15 +254,17 @@
     }
 
     &__subtitle {
-        font-size: 14px;
+        font-size: 20px;
         line-height: 1;
         color: #6ca625;
         font-weight: 600;
         margin-bottom: 14px;
+        text-transform: uppercase;
 
         @include bp(md1) {
             font-size: 24px;
             margin-bottom: 24px;
+            text-transform: none;
         }
 
         .spectre-slider ~ .spectre-slider & {
