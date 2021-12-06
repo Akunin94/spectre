@@ -230,7 +230,7 @@ $(function(){
 
 
 	// FORM SEND START
-	$('.spectre-popup-form__form, .spectre-form1-block__form').on('submit', function(){
+	$('.spectre-popup-form__form, .spectre-form1-block__form, .spectre-prices__right-form').on('submit', function(){
 		let $this = $(this),
 			$success_block = $this.next(),
 			url = $this.data('action'),
