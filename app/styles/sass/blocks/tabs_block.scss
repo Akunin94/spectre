@@ -120,6 +120,16 @@
             }
         }
 
+        &-button {
+            display: none;
+
+            @include bp(xxl) {
+                display: block;
+                width: 200px;
+                margin: 0 auto 30px;
+            }
+        }
+
         &-item {
             flex: 0 0 248px;
             max-width: 248px;
@@ -150,6 +160,11 @@
                 padding-right: 25px;
                 padding-bottom: 40px;
                 padding-left: 24px;
+            }
+            @include bp(xxl) {
+                &:nth-child(9n) ~ & {
+                    display: none;
+                }
             }
         }
 

@@ -343,22 +343,33 @@ img {
 	}
 }
 
-.ws-quiz-container {
-	@media all and (max-width: 1023px) {
+@media all and (max-width: 1023px) {
+	.Leadforms__bg {
+		z-index: 11;
+	}
+	body:after {
 		position: fixed;
 		left: 0;
 		right: 0;
 		bottom: 0;
-		background: rgba(0, 0, 0, .5);
-		padding: 10px 15px;
 		height: 66px;
+		background: rgba(0, 0, 0, .33);
+		content: '';
 		z-index: 10;
-
+	}
+	.ws-quiz-container {
 		.ws-quiz-btn-el-container {
 			inset: auto !important;
+			z-index: 11 !important;
 		}
 		.ws-quiz-btn-rotate {
 			transform: none;
+		}
+
+		& > .ws-quiz-btn-el-container {
+			position: fixed;
+			left: 15px !important;
+			bottom: 10px !important;
 		}
 	}
 }

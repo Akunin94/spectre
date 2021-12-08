@@ -6,6 +6,15 @@
         margin-bottom: 50px;
     }
 
+    .slick-track {
+        display: flex;
+
+        & > * {
+            min-height: 100%;
+            height: auto;
+        }
+    }
+
     .slick-arrow {
         position: absolute;
         left: 20px;
@@ -153,6 +162,7 @@
     }
 
     &__current {
+        
         @include bp(md1) {
             font-size: 70px;
             line-height: 1;
@@ -160,6 +170,9 @@
     }
 
     &__item.slick-slide {
+        display: flex !important;
+        flex-direction: column;
+
         @include bp(md1) {
             display: flex;
             flex-direction: row-reverse;
@@ -207,6 +220,7 @@
         padding: 20px;
         background: #fff;
         border-radius: 7px;
+        flex-grow: 1;
 
         @include bp(md1) {
             padding: 40px 80px;
