@@ -86,9 +86,16 @@
                 padding: 6px 5px 7px;
                 transition: 0.2s;
                 border: 1px solid #e5e5e5;
-                
+
                 @include bp(md) {
                     font-size: 16px;
+                    margin-left: calc(33.333% + 20px);
+                }
+                @include bp(md1) {
+                    margin-left: calc(50% + 20px);
+                }
+                @include bp(xl) {
+                    margin-left: calc(20% + 20px);
                 }
 
                 &:hover {

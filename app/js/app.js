@@ -229,7 +229,7 @@ $(function(){
 	function showForm(title = 'Получите консультацию') {
 		$("body").addClass("spectre-overflowhidden");
 		$(".spectre-popup-form").addClass("active");
-		$(".spectre-popup-form .spectre-popup-form__title").text(title);
+		$(".spectre-popup-form .spectre-popup-form__title:not(.spectre-popup-form__title--success)").text(title);
 	}
 	// POPUP FORM END
 
@@ -349,17 +349,44 @@ $(function(){
 	});
 	$(document).on('click', '.spectre-tabs__blocks-button', function(){
 		var $this = $(this),
-			$items = $(this).closest('.spectre-tabs__blocks-block').find('.spectre-tabs__blocks-item');
-
-		$this.toggleClass('active');
-
-		if ($this.hasClass('active')) {
-			$this.text('Скрыть');
-			$items.css('display', 'flex');
+			$button = $this,
+			$allItems = $this.closest('.spectre-tabs__blocks-block').find('.spectre-tabs__blocks-item'),
+			$items = $this.closest('.spectre-tabs__blocks-block').find('.spectre-tabs__blocks-item:not(:visible)');
+		
+		if($button.hasClass('active')) {
+			$button.text('Показать еще');
+			$button.removeClass('active');
+			$allItems.removeAttr('style');
 		} else {
-			$this.text('Показать еще');
-			$items.removeAttr('style');
+
+			if ($items.length) {
+				$items.each(function(index){
+					var $this = $(this);
+
+					if (index < 9) {
+						$(this).css('display', 'flex');
+					}
+
+					$items = $this.closest('.spectre-tabs__blocks-block').find('.spectre-tabs__blocks-item:not(:visible)')
+
+					if(!$items.length) {
+						$button.text('Скрыть');
+						$button.addClass('active');
+					}
+				});
+			} else {
+				$button.text('Скрыть');
+				$allItems.css('display', 'flex');
+			}
 		}
+
+		// if ($this.hasClass('active')) {
+		// 	$this.text('Скрыть');
+		// 	$items.css('display', 'flex');
+		// } else {
+		// 	$this.text('Показать еще');
+		// 	$items.removeAttr('style');
+		// }
 	});
 	/*$('.spectre-tabs__blocks-image').each(function(){
 		 lightGallery($(this).get(0), {
