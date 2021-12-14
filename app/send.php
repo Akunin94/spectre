@@ -2,7 +2,7 @@
 
     $phone = $_POST['phone'];
     
-    mail('gromovs1989@gmail.com', 'Заявка с сайта: СПЕКТР', "Телефон: {$phone}");
+    mail('Oknaio-metrika@yandex.ru', 'Заявка с сайта: СПЕКТР', "Телефон: {$phone}");
 
     header("Location: /");
     die();
