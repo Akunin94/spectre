@@ -71,6 +71,10 @@
         font-size: 10px;
         line-height: 1.2;
         margin-bottom: 20px;
+
+        @include bp(xxl) {
+            font-size: 12px;
+        }
     }
 
     &__policy {

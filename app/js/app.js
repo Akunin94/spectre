@@ -242,8 +242,6 @@ $(function(){
 			url = $this.data('action'),
 			formData = $this.serialize();
 
-		ym(86694763,'reachGoal','zayavka')
-
 		formAjax(url, formData, $this, $success_block)
 
 		return false;
@@ -254,8 +252,6 @@ $(function(){
 			$hide_block = $this.closest('.spectre-form-block').find('>*'),
 			url = $this.data('action'),
 			formData = $this.serialize();
-
-		ym(86694763,'reachGoal','zayavka')
 
 		formAjax(url, formData, $this, $success_block, $hide_block)
 
@@ -274,6 +270,8 @@ $(function(){
 	});
 
 	function formAjax(url, formData, $form, $success_block, $hide_block) {
+		ym(86694763,'reachGoal','zayavka')
+
 		$.ajax({
 			type: 'post',
 			url,
@@ -448,7 +446,7 @@ $(function(){
 			)
 			const type6 = setMarkers(
 				map,
-				[[83.204221, 54.933037], [83.204550, 54.934709], [83.202799, 54.933519], [83.202654, 54.934222], [54.935853, 83.193466], [54.937847, 83.198905], [54.940003, 83.180329], [54.940003, 83.180329], [54.937869, 83.199016], [54.941439, 83.186656]],
+				[[83.202654, 54.934222], [54.935853, 83.193466], [54.937847, 83.198905], [54.940003, 83.180329], [54.940003, 83.180329], [54.937869, 83.199016], [54.941439, 83.186656]],
 				'images/dist/comp6.svg'
 			)
 			const type7 = setMarkers(
