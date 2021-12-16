@@ -199,11 +199,7 @@ $(function(){
 
 	// POPUP FORM START
 	$(".spectre-popup").on("click", function (event) {
-		if ($(this).hasClass('spectre-tabs__blocks-item')) {
-			showForm('Узнайте актуальную цену на эту квартиру');
-		} else {
-			showForm();
-		}
+		showForm();
 
 		event.preventDefault();
 	});
@@ -217,8 +213,28 @@ $(function(){
 		}
 	});
 	$(document).click(function (event) {
-		if ($(event.target).closest(".spectre-popup-form__wrap").length || $(event.target).closest(".spectre-popup").length) return;
+		if ($(event.target).closest(".spectre-popup-form__wrap").length || $(event.target).closest(".spectre-popup").length || $(event.target).closest(".spectre-popup-form1__wrap").length || $(event.target).closest(".spectre-tabs__blocks-item").length) return;
 		hideForm();
+		event.stopPropagation();
+	});
+
+	$(".spectre-tabs__blocks-item").on("click", function (event) {
+		showForm1($(this));
+
+		event.preventDefault();
+	});
+	$(".spectre-popup-form1__close").on("click", function (event) {
+		hideForm1();
+		event.preventDefault();
+	});
+	$(document).keydown(function (event) {
+		if (event.which == 27) {
+			hideForm1();
+		}
+	});
+	$(document).click(function (event) {
+		if ($(event.target).closest(".spectre-popup-form1__wrap").length || $(event.target).closest(".spectre-tabs__blocks-item").length || $(event.target).closest(".spectre-popup-form__wrap").length || $(event.target).closest(".spectre-popup").length) return;
+		hideForm1();
 		event.stopPropagation();
 	});
 
@@ -226,20 +242,41 @@ $(function(){
 		$("body").removeClass("spectre-overflowhidden");
 		$(".spectre-popup-form").removeClass("active");
 	}
-	function showForm(title = 'Получите консультацию') {
+	function showForm() {
 		$("body").addClass("spectre-overflowhidden");
 		$(".spectre-popup-form").addClass("active");
-		$(".spectre-popup-form .spectre-popup-form__title:not(.spectre-popup-form__title--success)").text(title);
+	}
+
+	function hideForm1() {
+		$("body").removeClass("spectre-overflowhidden");
+		$(".spectre-popup-form1").removeClass("active");
+	}
+	function showForm1($item) {
+		const $image = $item.find('.spectre-tabs__blocks-image').html() || '';
+		const $name = $item.data('size') || '';
+		const $square = $item.find('.spectre-tabs__blocks-square').text() || '';
+		const $type = $item.data('type') || '';
+		const $material = $item.data('material') || '';
+
+		$("body").addClass("spectre-overflowhidden");
+
+		$('.spectre-popup-form1__left').html($image);
+		$('.spectre-popup-form1__name').html($name);
+		$('.spectre-popup-form1__option--square .spectre-popup-form1__option-value').html($square);
+		$('.spectre-popup-form1__option--type .spectre-popup-form1__option-value').html($type);
+		$('.spectre-popup-form1__option--material .spectre-popup-form1__option-value').html($material);
+
+		$(".spectre-popup-form1").addClass("active");
 	}
 	// POPUP FORM END
 
 
 
 	// FORM SEND START
-	$('.spectre-popup-form__form, .spectre-form1-block__form, .spectre-prices__right-form').on('submit', function(){
+	$('.spectre-popup-form__form, .spectre-popup-form1__form, .spectre-form1-block__form, .spectre-prices__right-form').on('submit', function(){
 		let $this = $(this),
 			$success_block = $this.next(),
-			url = $this.data('action'),
+			url = $this.attr('action'),
 			formData = $this.serialize();
 
 		formAjax(url, formData, $this, $success_block)
@@ -250,7 +287,7 @@ $(function(){
 		let $this = $(this),
 			$success_block = $this.closest('.spectre-form-block').find('.spectre-form-block__left-title--success'),
 			$hide_block = $this.closest('.spectre-form-block').find('>*'),
-			url = $this.data('action'),
+			url = $this.attr('action'),
 			formData = $this.serialize();
 
 		formAjax(url, formData, $this, $success_block, $hide_block)
