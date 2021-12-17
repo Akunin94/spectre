@@ -184,11 +184,13 @@
         &-image {
             margin: auto 0 18px;
             cursor: pointer;
+            height: 330px;
         }
 
         &-img {
-            width: auto;
-            height: auto;
+            height: 330px;
+            max-width: 100%;
+            object-fit: contain;
         }
 
         &-img + &-img {

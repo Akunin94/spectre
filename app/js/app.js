@@ -193,7 +193,7 @@ $(function(){
 
 
 	// MASK START
-	$('input[name=phone]').mask("8(999) 999-9999");
+	$('input[name=phone]').inputmask("8(999) 999-9999");
 	// MASK END
 
 
