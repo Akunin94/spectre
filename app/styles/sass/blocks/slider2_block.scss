@@ -1,0 +1,146 @@
+.spectre-slider2 {
+    padding: 30px 0;
+
+    @include bp(md) {
+        display: flex;
+        align-items: center;
+    }
+    @include bp(xxl) {
+        align-items: flex-start;
+    }
+
+    &__main-title {
+        font-weight: bold;
+        font-size: 30px;
+        text-align: center;
+        margin-bottom: 20px;
+
+        @include bp(md) {
+            text-align: left;
+        }
+        @include bp(fhd) {
+            font-size: 45px;
+            margin-bottom: 30px;
+        }
+    }
+
+    &__nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        &-item {
+            flex: 0 0 50%;
+            max-width: 50%;
+            cursor: pointer;
+            padding: 2px 5px;
+            margin-bottom: 5px;
+
+            @include bp(md) {
+                flex-basis: 100%;
+                max-width: 100%;
+                text-align: left;
+            }
+            @include bp(xxl) {
+                flex-basis: 50%;
+                max-width: 50%;
+            }
+            @include bp(fhd) {
+                font-size: 20px;
+                padding: 5px;
+                margin-bottom: 10px;
+            }
+
+            &--active {
+                font-weight: bold;
+                color: #ff3838;
+            }
+        }
+    }
+
+    &__left {
+        margin-bottom: 20px;
+
+        @include bp(md) {
+            flex: 0 0 300px;
+            margin-right: 40px;
+        }
+        @include bp(xxl) {
+            flex-basis: 50%;
+        }
+    }
+
+    &__right {
+        @include bp(md) { 
+            flex: 0 0 calc(100% - 340px);
+            max-width: calc(100% - 340px);
+        }
+        @include bp(xxl) {
+            flex-basis: 0 0 calc(50% - 40px);
+            max-width: calc(50% - 40px);
+        }
+    }
+
+    &__item {
+        position: relative;
+    }
+
+    &__image {
+        height: 0;
+        padding-top: 70%;
+        border-radius: 5px;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .slick-arrow {
+        position: absolute;
+        left: 15px;
+        bottom: 15px;
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+        cursor: pointer;
+        font-size: 0;
+        outline: none;
+        border: none;
+        padding: 0;
+        z-index: 1;
+        background: #fff;
+        transform: rotate(180deg);
+
+        @include bp(xxl) {
+            width: 60px;
+            height: 60px;
+        }
+
+        &:before {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            content: '';
+            background: url("data:image/svg+xml,%3Csvg width='12' height='23' viewBox='0 0 12 23' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='14.8548' height='1.98631' rx='0.993153' transform='matrix(0.653676 0.756774 -0.767998 0.640453 1.66064 0.270264)' fill='black'/%3E%3Crect width='14.8548' height='1.98631' rx='0.993154' transform='matrix(0.653676 -0.756774 -0.767998 -0.640453 1.77637 22.973)' fill='black'/%3E%3C/svg%3E%0A") 55% 50% / 9px no-repeat;
+
+            @include bp(xxl) {
+                background-size: auto;
+            }
+        }
+
+        &.slick-next {
+            transform: rotate(0);
+            margin-left: 50px;
+
+            @include bp(xxl) {
+                margin-left: 70px;
+            }
+        }
+
+        &:hover {
+            opacity: 0.5;
+        }
+    }
+}

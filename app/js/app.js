@@ -141,8 +141,8 @@ $(function(){
 
 	// SLIDER SOLO START
 	let $slider = $('.spectre-slider1__slider'),
-	$items = $slider.find('.spectre-slider1__item'),
-	itemsLength = $items.length;
+		$items = $slider.find('.spectre-slider1__item'),
+		itemsLength = $items.length;
 
 	if ( itemsLength > 1 ) {
 		$slider.on('init', function(slick){
@@ -163,6 +163,41 @@ $(function(){
 		});
 	}
 	// SLIDER SOLO END
+
+
+	// SLIDER SOLO SECOND START
+	let $slider2 = $('.spectre-slider2__slider');
+
+	$slider2.slick({
+		dots: false,
+		autoplay: true,
+		autoplaySpeed: 15000,
+		arrows: true,
+		infinite: true,
+		fade: true,
+		pauseOnHover: false,
+		rows: 0,
+	});
+	$slider2.on('afterChange', function(event, slick, currentSlide, nextSlide){
+		var $navs = $('.spectre-slider2__nav-item');
+
+		$navs.removeClass('spectre-slider2__nav-item--active');
+		$navs.eq(currentSlide).addClass('spectre-slider2__nav-item--active');
+	});
+	$(document).on('click', '.spectre-slider2__nav-item:not(.spectre-slider2__nav-item--active)', function(){
+		var $this = $(this),
+			index = $this.index();
+
+		$slider2.slick('slickGoTo', index);
+
+		$this.siblings().removeClass('spectre-slider2__nav-item--active');
+		$this.addClass('spectre-slider2__nav-item--active');
+
+		if ($('body').width() < 768) {
+			$("html, body").animate({ scrollTop: $slider2.offset().top-70 }, 500);
+		}
+	});
+	// SLIDER SOLO SECOND END
 
 
 	// VIDEO POPUP START
