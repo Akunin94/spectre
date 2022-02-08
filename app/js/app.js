@@ -166,6 +166,7 @@ $(function(){
 
 
 	// SLIDER SOLO SECOND START
+	let $sliders2 = $('.spectre-slider2__right');
 	let $slider2 = $('.spectre-slider2__slider');
 
 	$slider2.slick({
@@ -178,23 +179,18 @@ $(function(){
 		pauseOnHover: false,
 		rows: 0,
 	});
-	$slider2.on('afterChange', function(event, slick, currentSlide, nextSlide){
-		var $navs = $('.spectre-slider2__nav-item');
-
-		$navs.removeClass('spectre-slider2__nav-item--active');
-		$navs.eq(currentSlide).addClass('spectre-slider2__nav-item--active');
-	});
 	$(document).on('click', '.spectre-slider2__nav-item:not(.spectre-slider2__nav-item--active)', function(){
 		var $this = $(this),
 			index = $this.index();
 
-		$slider2.slick('slickGoTo', index);
+		$slider2.removeClass('active')
+		$slider2.eq(index).addClass('active')
 
 		$this.siblings().removeClass('spectre-slider2__nav-item--active');
 		$this.addClass('spectre-slider2__nav-item--active');
 
 		if ($('body').width() < 768) {
-			$("html, body").animate({ scrollTop: $slider2.offset().top-70 }, 500);
+			$("html, body").animate({ scrollTop: $sliders2.offset().top-70 }, 500);
 		}
 	});
 	// SLIDER SOLO SECOND END

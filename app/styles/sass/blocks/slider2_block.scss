@@ -73,6 +73,8 @@
     }
 
     &__right {
+        position: relative;
+
         @include bp(md) { 
             flex: 0 0 calc(100% - 340px);
             max-width: calc(100% - 340px);
@@ -80,6 +82,28 @@
         @include bp(xxl) {
             flex-basis: 0 0 calc(50% - 40px);
             max-width: calc(50% - 40px);
+        }
+    }
+
+    &__slider {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        opacity: 0;
+        visibility: hidden;
+
+        &.active, &:first-child {
+            opacity: 1;
+            visibility: visible;
+            position: static;
+        }
+
+        &:first-child:not(.active) {
+            position: absolute;
+            opacity: 0;
+            visibility: hidden;
         }
     }
 
